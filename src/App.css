@@ -1,16 +1,33 @@
 /* General styling */
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   background-color: #1a1a1a; /* Dark background color for the body */
   color: #fff; /* White text color */
   overflow-x: hidden; /* Prevent horizontal scroll */
+  font-family: "JetBrains Mono", monospace;
 }
 
 h1 {
   font-size: 5rem;
   margin-bottom: 1rem;
   font: 700 5rem "Space Grotesk", sans-serif; /* Ensure the font is applied correctly */
+}
+
+.home-content h1 .highlight-red {
+  background-image: linear-gradient(
+    to right,
+    #aca8a8,
+    #1e306a,
+    #cc0000,
+    #1d2a54
+  );
+
+  -webkit-background-clip: text; /* For Webkit browsers (Chrome, Safari) */
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
 }
 
 h3 {
@@ -43,9 +60,6 @@ p {
   min-height: 100vh;
   padding: 2rem;
   position: relative; /* Crucial for z-index to work against absolute children */
-  /* Remove z-index: 1; from here if you put a background color on particles
-     If particles background is transparent, keep it to lift the whole section.
-     It's generally better to set the background color directly in the Particles options. */
   background-color: transparent; /* Particles will draw the background now */
 }
 
