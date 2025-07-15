@@ -57,10 +57,16 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  /* Remove min-height: 100vh; */
+  /* min-height: 100vh; */ /* REMOVE THIS LINE */
+
+  /* Add margin-top to push it down from the navbar */
+  margin-top: 170px; /* Adjust this value (navbar height + desired gap) */
+
   padding: 2rem;
-  position: relative; /* Crucial for z-index to work against absolute children */
-  background-color: transparent; /* Particles will draw the background now */
+  position: relative;
+  background-color: transparent;
+  /* Keep other .home styles as they are */
 }
 
 /* Ensure content inside .home is visible over particles */
@@ -183,4 +189,86 @@ p {
     height: 180px;
     margin-top: 2rem;
   }
+}
+
+/* Navbar Styling */
+/* Nav bar  */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(26, 26, 26, 0.4);
+  padding: 15px 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.navbar-left .navbar-brand {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.navbar-center .navbar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+}
+
+/* COMBINED AND OPTIMIZED BLOCK FOR NAV BAR LINKS */
+.navbar-center .navbar-links li a {
+  color: #ccc;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  position: relative;
+  overflow: hidden; /* Helps contain the pseudo-elements if they start outside */
+  padding: 0 5px; /* Add some padding to make space for the brackets */
+}
+
+.navbar-center .navbar-links li a:hover {
+  color: #fff;
+}
+
+/* Create the left bracket */
+.navbar-center .navbar-links li a::before {
+  content: "[";
+  position: absolute;
+  left: -10px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  color: #ff0000;
+}
+
+/* Create the right bracket */
+.navbar-center .navbar-links li a::after {
+  content: "]";
+  position: absolute;
+  right: -10px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  color: #fd0000;
+}
+
+/* On hover, move the brackets into position and make them visible */
+.navbar-center .navbar-links li a:hover::before {
+  left: -5px;
+  opacity: 1;
+}
+
+.navbar-center .navbar-links li a:hover::after {
+  right: -5px;
+  opacity: 1;
 }
