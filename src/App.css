@@ -57,23 +57,22 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Remove min-height: 100vh; */
-  /* min-height: 100vh; */ /* REMOVE THIS LINE */
-
-  /* Add margin-top to push it down from the navbar */
-  margin-top: 170px; /* Adjust this value (navbar height + desired gap) */
-
+  margin-top: 170px;
   padding: 2rem;
   position: relative;
   background-color: transparent;
-  /* Keep other .home styles as they are */
 }
 
 /* Ensure content inside .home is visible over particles */
 .home-content,
 .home-img {
-  z-index: 2; /* Make sure these are above the particles div (which is z-index: 0) */
-  position: relative; /* Ensures a new stacking context for these elements */
+  z-index: 2;
+  position: relative;
+  /* Add these lines to center the content */
+  max-width: 800px; /* Adjust this value to your desired maximum width for the content block */
+  margin-left: auto; /* Centers the block horizontally */
+  margin-right: auto; /* Centers the block horizontally */
+  text-align: left; /* This will center inline content like text, but not block elements */
 }
 
 /* Remove the old background-pattern if particles.js replaced it */
@@ -147,14 +146,13 @@ p {
   height: 350px;
   background-color: #333;
   border-radius: 50%;
-  /* box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); */
-  margin-left: 20rem;
+  margin: auto;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .home {
-    flex-direction: column;
+    flex-direction: column; /* This will stack items vertically for small screens */
     text-align: center;
   }
 
@@ -187,7 +185,9 @@ p {
   .profile-picture-placeholder {
     width: 180px;
     height: 180px;
-    margin-top: 2rem;
+    margin-top: 2rem; /* Keep this for vertical spacing when stacked */
+    margin-left: auto; /* Ensure it stays centered even in column layout */
+    margin-right: auto; /* Ensure it stays centered even in column layout */
   }
 }
 
