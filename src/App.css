@@ -16,14 +16,7 @@ h1 {
 }
 
 .home-content h1 .highlight-red {
-  background-image: linear-gradient(
-    to right,
-    #aca8a8,
-    #1e306a,
-    #00eaff,
-    #1d2a54
-  );
-
+  background-image: linear-gradient(to right, #243b84, #00eaff, #243b84);
   -webkit-background-clip: text; /* For Webkit browsers (Chrome, Safari) */
   background-clip: text;
   color: transparent;
@@ -57,10 +50,11 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 170px;
+  margin-top: 140px; /* DECREASED THIS VALUE from 170px */
   padding: 2rem;
   position: relative;
   background-color: transparent;
+  gap: 4rem; /* Added gap to create space between text and image */
 }
 
 /* Ensure content inside .home is visible over particles */
@@ -68,12 +62,14 @@ p {
 .home-img {
   z-index: 2;
   position: relative;
-  /* Add these lines to center the content */
-  max-width: 800px; /* Adjust this value to your desired maximum width for the content block */
-  margin-left: auto; /* Centers the block horizontally */
-  margin-right: auto; /* Centers the block horizontally */
-  text-align: left; /* This will center inline content like text, but not block elements */
+  /* Adjust max-width and text-align as per your layout needs */
+  /* Re-evaluating max-width to allow more horizontal stretch */
+  max-width: 800px; /* INCREASED this value from 600px to "stretch out" the text */
+  text-align: left;
 }
+
+/* Removed margin-left/right: auto from .home-content, .home-img to allow flexbox to manage layout */
+/* If you need them to be centered when not in a row, consider media queries */
 
 /* Remove the old background-pattern if particles.js replaced it */
 .background-pattern {
@@ -140,13 +136,25 @@ p {
   box-shadow: 0 0 15px rgba(0, 234, 255, 0.8), 0 0 25px rgba(0, 234, 255, 0.5);
 }
 
-/* Home Image Placeholder */
-.profile-picture-placeholder {
-  width: 350px;
-  height: 350px;
-  background-color: #333;
-  border-radius: 50%;
-  margin: auto;
+/* --- Profile Picture Container Styling (.home-img) --- */
+
+.home-img {
+  width: 350px; /* Set a fixed width for the circular container */
+  height: 350px; /* Set a fixed height for the circular container */
+  border-radius: 50%; /* Makes the container circular */
+  overflow: hidden; /* Crucial: Hides anything that overflows the circular boundary */
+  display: flex; /* Use flexbox to center the image inside */
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #00eaff; /* Optional: A border for the circular frame */
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.5); /* Optional: A glowing shadow */
+}
+
+.profile-picture {
+  width: 100%; /* Make the image fill the entire circular container */
+  height: 100%; /* Make the image fill the entire circular container */
+  object-fit: cover; /* Ensure the image covers the area without distortion, cropping if necessary */
+  object-position: center; /* Centers the image within the frame */
 }
 
 /* Responsive adjustments */
@@ -154,11 +162,13 @@ p {
   .home {
     flex-direction: column; /* This will stack items vertically for small screens */
     text-align: center;
+    gap: 2rem; /* Adjust gap for smaller screens */
+    margin-top: 50px; /* Adjust margin for smaller screens as well */
   }
 
   .home-content {
     padding: 1rem;
-    max-width: 100%;
+    max-width: 100%; /* Allow content to take full width */
   }
 
   .home-content h1 {
@@ -182,10 +192,11 @@ p {
     justify-content: center;
   }
 
-  .profile-picture-placeholder {
+  .home-img {
+    /* Adjust size for smaller screens */
     width: 180px;
     height: 180px;
-    margin-top: 2rem; /* Keep this for vertical spacing when stacked */
+    margin-top: 2rem; /* Add some space above the image when stacked */
     margin-left: auto; /* Ensure it stays centered even in column layout */
     margin-right: auto; /* Ensure it stays centered even in column layout */
   }

@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import "../../src/App.css";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
+import profilepicture from "../assets/profile.png"; // Import your profile picture if needed
 
 const Home = () => {
   const [typedText, setTypedText] = useState("");
@@ -199,7 +199,7 @@ const Home = () => {
         </div>
       </div>
       <div className="home-img">
-        <div className="profile-picture-placeholder"></div>
+        <img src={profilepicture} alt="Profile" />
       </div>
     </section>
   );
