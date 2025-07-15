@@ -20,7 +20,7 @@ h1 {
     to right,
     #aca8a8,
     #1e306a,
-    #cc0000,
+    #00eaff,
     #1d2a54
   );
 
@@ -99,19 +99,19 @@ p {
   width: 48px;
   height: 46px;
   background-color: #1a1a1a;
-  border: 1px solid #ff0000;
+  border: 1px solid #00eaff;
   border-radius: 50%;
   color: #fff;
   font-size: 1.5rem;
   text-decoration: none;
-  box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 234, 255, 0.2);
   transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
   background-color: #1a1a1a;
-  color: #ff0000;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 25px rgba(255, 0, 0, 0.5);
+  color: #00eaff;
+  box-shadow: 0 0 15px rgba(0, 234, 255, 0.8), 0 0 25px rgba(0, 234, 255, 0.5);
   transform: translateY(-2px);
 }
 
@@ -123,21 +123,21 @@ p {
 .btn {
   background-color: #1a1a1a;
   color: #fff;
-  border: 1px solid #ff0000;
+  border: 1px solid #00eaff;
   padding: 0.4rem 1.2rem;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
   text-decoration: none;
-  box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 234, 255, 0.2);
   transition: all 0.3s ease;
 }
 
 .btn:hover {
   background-color: #1a1a1a;
-  color: #ff0000;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 25px rgba(255, 0, 0, 0.5);
+  color: #00eaff;
+  box-shadow: 0 0 15px rgba(0, 234, 255, 0.8), 0 0 25px rgba(0, 234, 255, 0.5);
 }
 
 /* Home Image Placeholder */
@@ -249,7 +249,7 @@ p {
   left: -10px;
   opacity: 0;
   transition: all 0.3s ease;
-  color: #ff0000;
+  color: #00eaff;
 }
 
 /* Create the right bracket */
@@ -259,7 +259,7 @@ p {
   right: -10px;
   opacity: 0;
   transition: all 0.3s ease;
-  color: #fd0000;
+  color: #00eaff;
 }
 
 /* On hover, move the brackets into position and make them visible */
