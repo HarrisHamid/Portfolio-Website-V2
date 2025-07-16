@@ -6,7 +6,12 @@ import PixelAnimation from "./PixelAnimation";
 
 const Home = () => {
   const [typedText, setTypedText] = useState("");
-  const phrases = ["Developer", "Life Long Learner", "Tech Bro"];
+  const phrases = [
+    "Developer",
+    "CS Major",
+    "Life Long Learner",
+    "Tech Enthusiest",
+  ];
   const sleepTime = 100;
 
   // Typewriter effect
@@ -44,7 +49,7 @@ const Home = () => {
       <PixelAnimation />
       <div className="home-content">
         <h1>
-          Hi, I'm <span className="highlight-red">Harris Hamid</span>
+          <span className="highlight-red">Harris Hamid</span>
         </h1>
 
         <div className="container-typewriter">
@@ -55,38 +60,7 @@ const Home = () => {
           </h3>
         </div>
 
-        <p>
-          My passions lie in both the tech and finance industries. <br />I am
-          always looking for new opportunities to enhance my skill set and work
-          on new projects.
-        </p>
-
-        <div className="btn-group">
-          <div className="social-icons">
-            <a
-              href="https://github.com/HarrisHamid"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub className="social-icon" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/hhamid26/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedinIn className="social-icon" />
-            </a>
-          </div>
-          <a
-            href="resume.pdf"
-            id="resume"
-            className="btn"
-            download="Harris_Hamid_Resume.pdf"
-          >
-            Resume
-          </a>
-        </div>
+        <p>Pashion for Tech and Building</p>
       </div>
     </section>
   );

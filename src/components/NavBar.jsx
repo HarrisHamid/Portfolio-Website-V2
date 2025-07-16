@@ -1,5 +1,6 @@
 // NavBar.jsx
 import React from "react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 const NavBar = () => {
   return (
@@ -18,12 +19,32 @@ const NavBar = () => {
             <a href="#about">About</a>
           </li>
           <li>
-            <a href="#experience">Experience</a>
+            <a href="#home">Experience</a>
           </li>
           <li>
             <a href="#projects">Projects</a>
           </li>
         </ul>
+      </div>
+      <div className="navbar-right">
+        <a
+          href="https://github.com/HarrisHamid"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="navbar-icon"
+          aria-label="GitHub"
+        >
+          <FaGithub />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/hhamid26/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="navbar-icon"
+          aria-label="LinkedIn"
+        >
+          <FaLinkedinIn />
+        </a>
       </div>
     </nav>
   );

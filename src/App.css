@@ -49,86 +49,25 @@ p {
 
 .home {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 170px;
-  padding: 2rem;
+  min-height: 80vh;
+  width: 100%;
+  text-align: left;
+  gap: 3rem;
   position: relative;
-  background-color: transparent;
-  gap: 4rem;
+  padding-top: 150px;
 }
 
-.home-content,
-.home-img {
+.home-content {
   z-index: 2;
   position: relative;
   max-width: 800px;
   text-align: center;
 }
 
-/* Button Group Styling  */
-.btn-group {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.social-icons {
-  display: flex;
-  gap: 1rem;
-}
-
-.social-icons a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 48px;
-  height: 46px;
-  background-color: #1a1a1a;
-  border: 1px solid #00eaff;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 1.5rem;
-  text-decoration: none;
-  box-shadow: 0 0 5px rgba(0, 234, 255, 0.2);
-  transition: all 0.3s ease;
-}
-
-.social-icons a:hover {
-  background-color: #1a1a1a;
-  color: #00eaff;
-  box-shadow: 0 0 15px rgba(0, 234, 255, 0.8), 0 0 25px rgba(0, 234, 255, 0.5);
-  transform: translateY(-2px);
-}
-
-.social-icon {
-  color: inherit;
-  font-size: inherit;
-}
-
-.btn {
-  background-color: #1a1a1a;
-  color: #fff;
-  border: 1px solid #00eaff;
-  padding: 0.4rem 1.2rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 0 5px rgba(0, 234, 255, 0.2);
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #1a1a1a;
-  color: #00eaff;
-  box-shadow: 0 0 15px rgba(0, 234, 255, 0.8), 0 0 25px rgba(0, 234, 255, 0.5);
-}
-
 /* Navbar Styling */
-/* Nav bar  */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -211,13 +150,34 @@ p {
   opacity: 1;
 }
 
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.navbar-icon {
+  color: #fff;
+  font-size: 1.6rem;
+  margin-left: 8px;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-icon:hover {
+  color: #00eaff;
+}
+
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .home {
-    flex-direction: column; /* This will stack items vertically for small screens */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    gap: 2rem; /* Adjust gap for smaller screens */
-    margin-top: 50px; /* Adjust margin for smaller screens as well */
+    gap: 2rem;
+    min-height: 80vh;
   }
 
   .home-content {
