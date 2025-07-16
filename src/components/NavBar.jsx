@@ -1,32 +1,28 @@
 // NavBar.jsx
 import React from "react";
-import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <Link to="/" className="navbar-brand">
+        <a href="#home" className="navbar-brand">
           Harris Hamid
-        </Link>{" "}
-        {/* Use Link */}
+        </a>
       </div>
       <div className="navbar-center">
         <ul className="navbar-links">
           <li>
-            <Link to="/">Home</Link>
-          </li>{" "}
+            <a href="#home">Home</a>
+          </li>
           <li>
-            <Link to="/about">About</Link>
-          </li>{" "}
-          {/* Use Link */}
+            <a href="#about">About</a>
+          </li>
           <li>
-            <Link to="/experience">Experience</Link>
-          </li>{" "}
-          {/* Use Link */}
+            <a href="#experience">Experience</a>
+          </li>
           <li>
-            <Link to="/projects">Projects</Link>
-          </li>{" "}
+            <a href="#projects">Projects</a>
+          </li>
         </ul>
       </div>
     </nav>
