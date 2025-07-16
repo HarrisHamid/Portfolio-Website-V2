@@ -60,7 +60,7 @@ const Home = () => {
           </h3>
         </div>
 
-        <p>Pashion for Tech and Building</p>
+        {/* <p>Pashion for Tech and Building</p> */}
       </div>
     </section>
   );
