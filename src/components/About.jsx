@@ -1,10 +1,12 @@
 import React from "react";
+import profilePic from "../assets/profile.png";
 
 const About = () => (
   <section id="about" className="about-section">
-    <h2>About</h2>
-    <p>This is the About section. Add your content here.</p>
-    <div style={{ height: "600px" }}></div>
+    <h2>About Me</h2>
+    <div className="headshot">
+      <img src={profilePic} alt="Harris Hamid"></img>
+    </div>
   </section>
 );
 

@@ -169,6 +169,13 @@ p {
   color: #00eaff;
 }
 
+/* About Me Section */
+.headshot {
+  border: 1px solid hsl(0, 0%, 88%);
+  border-radius: 10px box;
+  box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+}
+
 /* Responsive adjustments */
 @media (max-width: 900px) {
   .home {
