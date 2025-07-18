@@ -20,7 +20,7 @@ const PixelAnimation = () => {
           },
         },
         color: {
-          value: "#ffffff",
+          value: "",
         },
         shape: {
           type: "circle",
@@ -55,7 +55,7 @@ const PixelAnimation = () => {
         line_linked: {
           enable: true,
           distance: 150,
-          color: "#ffffff",
+          color: "#FFFFFF",
           opacity: 0.4,
           width: 1,
         },
