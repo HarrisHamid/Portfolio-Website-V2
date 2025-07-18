@@ -170,10 +170,172 @@ p {
 }
 
 /* About Me Section */
+.about-section {
+  padding: 80px 0; /* Adjust padding as needed */
+  background-color: #1a1a1a; /* Background color from your body style */
+  color: #fff; /* Text color from your body style */
+}
+
+.container {
+  max-width: 1200px; /* Max width of your content area */
+  margin: 0 auto; /* Center the container */
+  padding: 0 15px; /* Horizontal padding */
+}
+
+/* Section Title Styles */
+.section-title {
+  text-align: center;
+  margin-bottom: 50px; /* Space below the title */
+}
+
+.section-title h2 {
+  padding-top: 15px;
+  font-size: 3em; /* Larger font for the title */
+  font-weight: 700;
+  background-image: linear-gradient(
+    to right,
+    #2a48aa,
+    #00eaff,
+    #2a48aa
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  display: inline-block; /* Allow spans to align with text */
+}
+
+/* Row and Column Flexbox Setup (similar to Bootstrap's grid) */
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  margin-right: -15px; /* Compensate for column padding */
+  margin-left: -15px; /* Compensate for column padding */
+}
+
+/* Specific class to control the order of the about content row */
+.about-content-row {
+  flex-direction: row; /* Default: text then image */
+}
+
+.col-lg-4,
+.col-lg-8,
+.col {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .col-lg-4 {
+    flex: 0 0 33.333333%; /* 4 out of 12 columns */
+    max-width: 33.333333%;
+  }
+  .col-lg-8 {
+    flex: 0 0 66.666667%; /* 8 out of 12 columns */
+    max-width: 66.666667%;
+  }
+  /* On large screens, reverse the order to put image on the right */
+  .order-lg-last {
+    order: 1; /* Pushes this column to the end of the flex container */
+  }
+}
+
+/* Alignment utilities */
+.align-self-center {
+  align-self: center; /* Vertically align content in the middle */
+}
+
+/* Content specific styles */
+.content {
+  padding-top: 1rem; /* pt-1 */
+  padding-left: 1rem; /* pl-1 (for larger screens) */
+}
+
+.pb-4 {
+  padding-bottom: 1.5rem; /* Equivalent to Bootstrap's pb-4 */
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Headshot styling */
 .headshot {
-  border: 1px solid hsl(0, 0%, 88%);
-  border-radius: 10px box;
-  box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+  width: 450px; /* **Increased size** */
+  height: 460px; /* **Increased size** */
+  border-radius: 20px; /* **Rounded border** */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border: 2px solid #00eaff; /* Example border color */
+}
+
+/* Info paragraph styling */
+.about-info-paragraph {
+  background-color: #2a2a2a; /* Slightly lighter background for the paragraph */
+  padding: 20px;
+  border-radius: 20px; /* **Rounded border** */
+  border: 1px solid #3a3a3a; /* Subtle border */
+  line-height: 1.6; /* Improve readability */
+}
+
+/* Grid for skills/details */
+.row-cols-2 > .col {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.row-cols-sm-2 > .col {
+  /* Default for small screens and up */
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+@media (min-width: 768px) {
+  .row-cols-md-4 > .col {
+    flex: 0 0 25%; /* 4 columns on medium screens and up */
+    max-width: 25%;
+  }
+}
+
+@media (min-width: 992px) {
+  .row-cols-lg-4 > .col {
+    flex: 0 0 25%; /* 4 columns on large screens and up */
+    max-width: 25%;
+  }
+}
+
+.gy-3 {
+  /* Vertical gutter (gap-y) */
+  row-gap: 1rem; /* Adjust as needed */
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  /* Adjust breakpoint for stacking */
+  .about-content-row {
+    flex-direction: column; /* Stack image and text on smaller screens */
+  }
+  .col-lg-4,
+  .col-lg-8 {
+    flex: 0 0 100%; /* Take full width when stacked */
+    max-width: 100%;
+  }
+  .order-lg-last {
+    order: 0; /* Reset order on small screens so image is still above hobbies */
+  }
+  .headshot {
+    margin-bottom: 20px; /* Add space between headshot and text when stacked */
+  }
 }
 
 /* Responsive adjustments */
