@@ -24,10 +24,14 @@ const About = () => (
               <p>
                 {" "}
                 {/* Removed text-center from here as it's not needed for the main paragraph within the bordered div */}
-                Whata up! I'm Harris Hamid, a rising Senior CS major @ Stevens
-                Insittue of Technolgy. I enjoy learning about the Techn Industry
-                and learning things. I enjoy building weather with software or
-                my limited hardware skills.
+                LOGO Education
+              </p>
+              <p>
+                {" "}
+                {/* Removed text-center from here as it's not needed for the main paragraph within the bordered div */}
+                Whats up! I'm Harris Hamid, a rising Senior CS major @ Stevens.
+                I got interest in tech, cars, watches, and sports. I loving
+                building whether with software or my limited hardware skills.
               </p>
             </div>
             <div className="hobbies-section">
