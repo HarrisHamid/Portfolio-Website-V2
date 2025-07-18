@@ -1,4 +1,13 @@
 /* General styling */
+
+@import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap");
+
+h1,
+h2,
+title {
+  font-family: "Zen Dots", sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -24,6 +33,7 @@ h1 {
   background-clip: text;
   color: transparent;
   font-weight: 700;
+  font-family: "Zen Dots", sans-serif;
 }
 
 h3 {
@@ -188,7 +198,7 @@ p {
 }
 
 .section-title h2 {
-  padding-top: 14px;
+  padding-top: 15px;
   font-size: 3em; /* Larger font for the title */
   font-weight: 700;
   background-image: linear-gradient(to right, #2a48aa, #00eaff, #2a48aa);
@@ -258,7 +268,7 @@ p {
 
 /* Headshot styling */
 .headshot {
-  margin-top: 55px; /* Add space above the image when stacked */
+  margin-top: 40px; /* Add space above the image when stacked */
   width: 450px; /* **Increased size** */
   height: 460px; /* **Increased size** */
   border-radius: 20px; /* **Rounded border** */

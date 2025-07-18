@@ -36,6 +36,8 @@ const About = () => (
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
                     color: "transparent",
+                    fontWeight: "bold",
+                    padding: "0 5px",
                   }}
                 >
                   EDUCATION
@@ -46,7 +48,6 @@ const About = () => (
                     alignItems: "center",
                     gap: "20px",
                     paddingTop: "10px",
-                    paddingBottom: "13px",
                     position: "center",
                   }}
                 >
@@ -72,8 +73,7 @@ const About = () => (
             </div>
             <div className="hobbies-section">
               <p className="about-main-paragraph">
-                🕹 Passion for technology, building with software and hardware,
-                and having genuine impact that helps people
+                🕹 Passion for technology; Building for genuine impact
               </p>
               {/* Added a new div for hobbies for better styling control */}
               <p className="hobbies-title">

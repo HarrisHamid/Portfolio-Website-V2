@@ -9,8 +9,9 @@ const Home = () => {
   const phrases = [
     "Developer",
     "CS Major",
-    "Life Long Learner",
-    "Tech Enthusiest",
+    "Martial Artist",
+    "Tech Enthusiast",
+    "Academic Weapon",
   ];
   const sleepTime = 100;
 
