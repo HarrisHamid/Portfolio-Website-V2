@@ -1,8 +1,13 @@
 import React from "react";
 import profilePic from "../assets/profile.png"; // Assuming you still want to use a profile picture
 import "../App.css"; // Import the CSS file for styling
-import ufcpic from "../assets/UFC.png";
-import f1 from "../assets/f1.png";
+import ufcpic from "../assets/ufc_bw.png";
+import f1long from "../assets/f1long.png";
+import guitar from "../assets/guitar.png";
+import climbing from "../assets/rc.jpg";
+import karate from "../assets/karate.png";
+import SchoolIcon from "@mui/icons-material/School";
+import Stevens from "../assets/sit.jpg"; // Assuming you have a Stevens logo image
 
 const About = () => (
   <section id="about" className="about-section">
@@ -19,23 +24,57 @@ const About = () => (
         <div className="col-lg-8 content align-self-center">
           <div className="about-info-paragraph">
             {" "}
-            {/* This div now contains both the main paragraph and hobbies */}
             <div className="row pb-4">
               <p>
                 {" "}
-                {/* Removed text-center from here as it's not needed for the main paragraph within the bordered div */}
-                LOGO Education
-              </p>
-              <p>
-                {" "}
-                {/* Removed text-center from here as it's not needed for the main paragraph within the bordered div */}
-                Whats up! I'm Harris Hamid, a rising Senior CS major @ Stevens.
-                I got interest in tech, cars, watches, and sports. I loving
-                building whether with software or my limited hardware skills.
+                <SchoolIcon fontSize="medium" />{" "}
+                <span
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to right, #2a48aa, #00eaff, #2a48aa)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    color: "transparent",
+                  }}
+                >
+                  EDUCATION
+                </span>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "20px",
+                    paddingTop: "10px",
+                    paddingBottom: "13px",
+                    position: "center",
+                  }}
+                >
+                  <img
+                    src={Stevens}
+                    alt="Stevens Institute of Technology"
+                    style={{
+                      width: "120px",
+                      height: "120px",
+                      objectFit: "cover",
+                      borderRadius: "20px",
+                    }}
+                  />
+                  <div>
+                    <p style={{ margin: 0 }}>
+                      Undergraduate Computer Science Major <br />
+                      VP of Recruitment @ Blueprint <br />
+                      Brotherhood Coordinator @ MSA
+                    </p>
+                  </div>
+                </div>
               </p>
             </div>
             <div className="hobbies-section">
-              {" "}
+              <p className="about-main-paragraph">
+                🕹 Passion for technology, building with software and hardware,
+                and having genuine impact that helps people
+              </p>
               {/* Added a new div for hobbies for better styling control */}
               <p className="hobbies-title">
                 {" "}
@@ -48,19 +87,16 @@ const About = () => (
                 <div className="col d-flex justify-content-start hobby-item">
                   {" "}
                   {/* Adjusted to justify-content-start for left alignment */}
-                  <img src={f1} alt="F1" />
+                  <img src={f1long} alt="F1" />
                 </div>
                 <div className="col d-flex justify-content-start hobby-item">
                   <img src={ufcpic} alt="UFC" />
                 </div>
                 <div className="col d-flex justify-content-start hobby-item">
-                  <span>Karate</span>
+                  <img src={karate} alt="Karate" />
                 </div>
                 <div className="col d-flex justify-content-start hobby-item">
-                  <span>Rock Climbing</span>
-                </div>
-                <div className="col d-flex justify-content-start hobby-item">
-                  <span>Guitar</span>
+                  <img src={climbing} alt="Rock Climbing" />
                 </div>
               </div>
             </div>

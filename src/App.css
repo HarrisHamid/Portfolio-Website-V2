@@ -171,9 +171,8 @@ p {
 
 /* About Me Section */
 .about-section {
-  padding: 80px 0; /* Adjust padding as needed */
-  background-color: #1a1a1a; /* Background color from your body style */
-  color: #fff; /* Text color from your body style */
+  padding: 140px 0; /* Adjust padding as needed */
+  background-color: #0c0a0a; /* Background color from your body style */
 }
 
 .container {
@@ -185,19 +184,14 @@ p {
 /* Section Title Styles */
 .section-title {
   text-align: center;
-  margin-bottom: 50px; /* Space below the title */
+  margin-bottom: 20px; /* Space below the title */
 }
 
 .section-title h2 {
-  padding-top: 15px;
+  padding-top: 14px;
   font-size: 3em; /* Larger font for the title */
   font-weight: 700;
-  background-image: linear-gradient(
-    to right,
-    #2a48aa,
-    #00eaff,
-    #2a48aa
-  );
+  background-image: linear-gradient(to right, #2a48aa, #00eaff, #2a48aa);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -264,20 +258,116 @@ p {
 
 /* Headshot styling */
 .headshot {
+  margin-top: 55px; /* Add space above the image when stacked */
   width: 450px; /* **Increased size** */
   height: 460px; /* **Increased size** */
   border-radius: 20px; /* **Rounded border** */
   object-fit: cover; /* Ensures the image covers the area without distortion */
-  border: 2px solid #00eaff; /* Example border color */
+  box-shadow: 0 4px 30px rgb(0, 0, 0); /* Subtle shadow for depth */
+}
+
+.headshot:hover {
+  transform: scale(1.03); /* Slightly scales up */
+  box-shadow: 0 10px 30px rgba(9, 153, 215, 0.714); /* Stronger glow */
+  border-color: #051213; /* Bright border on hover */
 }
 
 /* Info paragraph styling */
 .about-info-paragraph {
-  background-color: #2a2a2a; /* Slightly lighter background for the paragraph */
+  /* Existing styles */
+  background: linear-gradient(
+    45deg,
+    rgba(180, 179, 179, 0.022),
+    /* Start color with 50% opacity */ rgba(71, 71, 71, 0.859)
+      /* End color with 80% opacity, slightly darker */
+  );
   padding: 20px;
-  border-radius: 20px; /* **Rounded border** */
-  border: 1px solid #3a3a3a; /* Subtle border */
-  line-height: 1.6; /* Improve readability */
+  border-radius: 20px;
+  border: 1px solid #dad4d4;
+  line-height: 1.6;
+
+  /* New styles for transition and initial state */
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out; /* Smooth transitions for hover effects */
+  position: relative; /* Needed for transform */
+  z-index: 1; /* Ensures it stays above other elements if they are positioned */
+}
+
+.about-info-paragraph:hover {
+  transform: translateY(-5px); /* Lifts the card up by 5px on hover */
+  border-color: #00eaff; /* Light color border on hover */
+  box-shadow: 0 8px 16px rgba(0, 234, 255, 0.3); /* Slightly increased opacity for shadow */
+}
+
+.about-info-paragraph:hover {
+  transform: translateY(-5px); /* Lifts the card up by 5px on hover */
+  border-color: #00eaff; /* Light color border on hover */
+  box-shadow: 0 8px 16px rgba(0, 234, 255, 0.2); /* Subtle glow effect */
+}
+
+/* Existing CSS for hobbies-grid and columns */
+
+/* Grid for skills/details */
+
+/* Existing CSS for hobbies-grid and columns */
+
+/* Grid for skills/details */
+.hobbies-grid {
+  display: flex; /* Ensure flexbox is used */
+  flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
+  justify-content: space-evenly; /* Distribute items evenly with space around them */
+  align-items: center; /* Vertically center hobby items if they have different heights */
+  padding: 0 10px; /* Add some horizontal padding to the grid itself */
+  /* You might want to adjust max-width of the parent .about-info-paragraph or .col-lg-8
+     if the items overflow on smaller screens */
+  gap: 15px; /* Add a consistent gap between items */
+}
+
+.hobbies-grid .hobby-item {
+  /* Default styling for hobby items */
+  display: flex;
+  flex-direction: column; /* Stack image and text if you add text labels below hobbies */
+  justify-content: center; /* Center content within each hobby item */
+  align-items: center;
+  /* Remove padding: 0 10px; from here as gap on parent handles spacing */
+  /* Each item should take up an equal portion of the available space */
+  flex: 1; /* Allow items to grow and shrink evenly */
+  min-width: 0; /* Important for flex items with images to prevent overflow */
+}
+
+/* Ensure images within hobby items scale correctly */
+.hobbies-grid .hobby-item img {
+  width: 110px; /* Set a fixed width */
+  height: 110px; /* Set a fixed height */
+  object-fit: contain; /* Ensures the entire image is visible, might leave space */
+  /* OR object-fit: cover; if you prefer cropping to fill the space */
+  border-radius: 10px; /* Optional: adds a slight rounded corner to images */
+  display: block; /* Remove extra space below image */
+}
+
+/* Adjustments for smaller screens if needed */
+@media (max-width: 991px) {
+  /* Adjust breakpoint as needed for when items should stack */
+  .hobbies-grid {
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center items when wrapped */
+  }
+  .hobbies-grid .hobby-item {
+    flex: 0 0 50%; /* 2 items per row on smaller screens */
+    max-width: 50%;
+  }
+  .hobbies-grid .hobby-item img {
+    width: 90px; /* Adjust size for smaller screens */
+    height: 90px;
+  }
+}
+
+/* On very small screens, stack them */
+@media (max-width: 575px) {
+  .hobbies-grid .hobby-item {
+    flex: 0 0 100%; /* 1 item per row on very small screens */
+    max-width: 100%;
+  }
 }
 
 /* Grid for skills/details */
