@@ -497,12 +497,12 @@ body {
 }
 
 .pill {
-  background: #2e003e;
+  background: #002c3e;
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
   font-size: 0.8rem;
-  color: #d3aaff;
-  border: 1px solid #663399;
+  color: #00eaff;
+  border: 1px solid #00a9ec;
 }
 
 /* Glowing dot */
