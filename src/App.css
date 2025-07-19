@@ -426,6 +426,7 @@ body {
   padding: 0;
 }
 
+/* Add this to your App.css if not already present */
 .timeline-container {
   position: relative;
   padding: 3rem 1rem;
@@ -434,27 +435,26 @@ body {
 }
 
 .timeline-title {
-  padding-top: 45px;
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
-  color: #00eaff;
+  color: #00ffff;
   margin-bottom: 2rem;
 }
 
 .timeline-line {
   position: absolute;
-  top: 175px;
+  top: 100px;
   left: 50%;
-  width: 2px;
+  width: 4px;
   height: 100%;
-  background: linear-gradient(to bottom, #00eaff, #2a48aa);
+  background: #00ffff;
   transform: translateX(-50%);
   z-index: 1;
 }
 
 .timeline-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: #1a1a1a;
   border-radius: 1rem;
   padding: 1.5rem;
   width: 90%;
@@ -463,6 +463,7 @@ body {
   position: relative;
   z-index: 2;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  color: white;
 }
 
 .timeline-card.left {
@@ -478,7 +479,7 @@ body {
 }
 
 .company {
-  color: #00eaff;
+  color: #00f2ff;
   font-weight: bold;
   margin: 0.5rem 0;
 }
@@ -496,14 +497,15 @@ body {
 }
 
 .pill {
-  background: #00283e;
+  background: #2e003e;
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
   font-size: 0.8rem;
-  color: #00eaff;
-  border: 1px solid #00eaff;
+  color: #d3aaff;
+  border: 1px solid #663399;
 }
 
+/* Glowing dot */
 .glow-dot {
   position: absolute;
   width: 14px;
@@ -515,11 +517,28 @@ body {
 }
 
 .top-right {
-  top: -1px;
+  top: -7px;
   right: -17px;
 }
 
 .top-left {
-  top: -1px;
+  top: -7px;
   left: -17px;
+}
+
+/* === Responsive Styling for Mobile === */
+@media (max-width: 768px) {
+  .timeline-card {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: left;
+    width: 100%;
+  }
+
+  .glow-dot.top-left,
+  .glow-dot.top-right {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
 }
