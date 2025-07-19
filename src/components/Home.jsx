@@ -15,7 +15,7 @@ const Home = () => {
   ];
   const sleepTime = 100;
 
-  // Typewriter effect
+  // Typewriterf effect
   useEffect(() => {
     let currentPhraseIndex = 0;
 

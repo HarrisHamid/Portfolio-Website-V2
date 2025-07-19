@@ -4,8 +4,8 @@
 
 h1,
 h2,
-title {
-  font-family: "Zen Dots", sans-serif;
+h4 title {
+  font-family: "Goldman", sans-serif;
 }
 
 html {
@@ -180,46 +180,48 @@ p {
 }
 
 /* About Me Section */
+/* App.css */
+
+/* ... (previous CSS rules) ... */
+
+/* About Me Section */
 .about-section {
-  padding: 140px 0; /* Adjust padding as needed */
-  background-color: #0c0a0a; /* Background color from your body style */
+  padding: 140px 0;
+  background-color: #0c0a0a;
 }
 
 .container {
-  max-width: 1200px; /* Max width of your content area */
-  margin: 0 auto; /* Center the container */
-  padding: 0 15px; /* Horizontal padding */
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 18px;
 }
 
-/* Section Title Styles */
 .section-title {
   text-align: center;
-  margin-bottom: 20px; /* Space below the title */
+  margin-bottom: 20px;
 }
 
 .section-title h2 {
   padding-top: 15px;
-  font-size: 3em; /* Larger font for the title */
+  font-size: 3em;
   font-weight: 700;
   background-image: linear-gradient(to right, #2a48aa, #00eaff, #2a48aa);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   position: relative;
-  display: inline-block; /* Allow spans to align with text */
+  display: inline-block;
 }
 
-/* Row and Column Flexbox Setup (similar to Bootstrap's grid) */
 .row {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
-  margin-right: -15px; /* Compensate for column padding */
-  margin-left: -15px; /* Compensate for column padding */
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 
-/* Specific class to control the order of the about content row */
 .about-content-row {
-  flex-direction: row; /* Default: text then image */
+  flex-direction: row;
 }
 
 .col-lg-4,
@@ -231,256 +233,179 @@ p {
   padding-left: 15px;
 }
 
-/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .col-lg-4 {
-    flex: 0 0 33.333333%; /* 4 out of 12 columns */
+    flex: 0 0 33.333333%;
     max-width: 33.333333%;
   }
   .col-lg-8 {
-    flex: 0 0 66.666667%; /* 8 out of 12 columns */
+    flex: 0 0 66.666667%;
     max-width: 66.666667%;
   }
-  /* On large screens, reverse the order to put image on the right */
   .order-lg-last {
-    order: 1; /* Pushes this column to the end of the flex container */
+    order: 1;
   }
 }
 
-/* Alignment utilities */
 .align-self-center {
-  align-self: center; /* Vertically align content in the middle */
+  align-self: center;
 }
 
-/* Content specific styles */
 .content {
-  padding-top: 1rem; /* pt-1 */
-  padding-left: 1rem; /* pl-1 (for larger screens) */
+  padding-top: 1rem;
+  padding-left: 1rem;
 }
 
 .pb-4 {
-  padding-bottom: 1.5rem; /* Equivalent to Bootstrap's pb-4 */
+  padding-bottom: 1.5rem;
 }
 
 .text-center {
   text-align: center;
 }
 
-/* Headshot styling */
 .headshot {
-  margin-top: 40px; /* Add space above the image when stacked */
-  width: 450px; /* **Increased size** */
-  height: 460px; /* **Increased size** */
-  border-radius: 20px; /* **Rounded border** */
-  object-fit: cover; /* Ensures the image covers the area without distortion */
-  box-shadow: 0 4px 30px rgb(0, 0, 0); /* Subtle shadow for depth */
+  margin-top: 60px;
+  width: 450px;
+  height: 460px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 30px rgb(0, 0, 0);
 }
 
 .headshot:hover {
-  transform: scale(1.03); /* Slightly scales up */
-  box-shadow: 0 10px 30px rgba(9, 153, 215, 0.714); /* Stronger glow */
-  border-color: #051213; /* Bright border on hover */
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(9, 153, 215, 0.714);
+  border-color: #051213;
 }
 
-/* Info paragraph styling */
 .about-info-paragraph {
-  /* Existing styles */
   background: linear-gradient(
     45deg,
     rgba(180, 179, 179, 0.022),
-    /* Start color with 50% opacity */ rgba(71, 71, 71, 0.859)
-      /* End color with 80% opacity, slightly darker */
+    rgba(71, 71, 71, 0.859)
   );
   padding: 20px;
   border-radius: 20px;
   border: 1px solid #dad4d4;
   line-height: 1.6;
-
-  /* New styles for transition and initial state */
   transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out; /* Smooth transitions for hover effects */
-  position: relative; /* Needed for transform */
-  z-index: 1; /* Ensures it stays above other elements if they are positioned */
+    box-shadow 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
 }
 
 .about-info-paragraph:hover {
-  transform: translateY(-5px); /* Lifts the card up by 5px on hover */
-  border-color: #00eaff; /* Light color border on hover */
-  box-shadow: 0 8px 16px rgba(0, 234, 255, 0.3); /* Slightly increased opacity for shadow */
+  transform: translateY(-5px);
+  border-color: #00eaff;
+  box-shadow: 0 8px 16px rgba(0, 234, 255, 0.2);
 }
 
-.about-info-paragraph:hover {
-  transform: translateY(-5px); /* Lifts the card up by 5px on hover */
-  border-color: #00eaff; /* Light color border on hover */
-  box-shadow: 0 8px 16px rgba(0, 234, 255, 0.2); /* Subtle glow effect */
+/* Two-column layout for Education and Hobbies */
+.two-column-layout {
+  display: flex; /* Use flexbox for the main two-column layout */
+  flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+  justify-content: space-between; /* Space out columns */
+  gap: 20px; /* Gap between columns */
 }
 
-/* Existing CSS for hobbies-grid and columns */
+.education-column,
+.hobbies-column {
+  flex: 1; /* Allow columns to grow and shrink evenly */
+  min-width: 300px; /* Minimum width to prevent content from squishing too much */
+}
 
-/* Grid for skills/details */
+/* Education Section specific styles */
+.education-column p:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
 
-/* Existing CSS for hobbies-grid and columns */
+.education-column p:first-child span {
+  margin-right: 10px;
+}
 
-/* Grid for skills/details */
+/* Hobbies Title Alignment */
+.hobbies-title {
+  text-align: left;
+  /* padding-left: 20px; */ /* Removed this as two-column-layout handles spacing */
+  margin-top: 0; /* Remove top margin to align with education content */
+  margin-bottom: 10px;
+  padding-top: 8px;
+  padding-left: 80px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Hobbies Grid Styling (CSS Grid for precise layout) */
 .hobbies-grid {
-  display: flex; /* Ensure flexbox is used */
-  flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
-  justify-content: space-evenly; /* Distribute items evenly with space around them */
-  align-items: center; /* Vertically center hobby items if they have different heights */
-  padding: 0 10px; /* Add some horizontal padding to the grid itself */
-  /* You might want to adjust max-width of the parent .about-info-paragraph or .col-lg-8
-     if the items overflow on smaller screens */
-  gap: 15px; /* Add a consistent gap between items */
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); /* 2 columns for hobbies within its column */
+  gap: 15px;
+  justify-items: center;
+  align-items: center;
+  padding: 0; /* Remove padding as the parent column handles it */
 }
 
 .hobbies-grid .hobby-item {
-  /* Default styling for hobby items */
   display: flex;
-  flex-direction: column; /* Stack image and text if you add text labels below hobbies */
-  justify-content: center; /* Center content within each hobby item */
-  align-items: center;
-  /* Remove padding: 0 10px; from here as gap on parent handles spacing */
-  /* Each item should take up an equal portion of the available space */
-  flex: 1; /* Allow items to grow and shrink evenly */
-  min-width: 0; /* Important for flex items with images to prevent overflow */
-}
-
-/* Ensure images within hobby items scale correctly */
-.hobbies-grid .hobby-item img {
-  width: 110px; /* Set a fixed width */
-  height: 110px; /* Set a fixed height */
-  object-fit: contain; /* Ensures the entire image is visible, might leave space */
-  /* OR object-fit: cover; if you prefer cropping to fill the space */
-  border-radius: 10px; /* Optional: adds a slight rounded corner to images */
-  display: block; /* Remove extra space below image */
-}
-
-/* Adjustments for smaller screens if needed */
-@media (max-width: 991px) {
-  /* Adjust breakpoint as needed for when items should stack */
-  .hobbies-grid {
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    justify-content: center; /* Center items when wrapped */
-  }
-  .hobbies-grid .hobby-item {
-    flex: 0 0 50%; /* 2 items per row on smaller screens */
-    max-width: 50%;
-  }
-  .hobbies-grid .hobby-item img {
-    width: 90px; /* Adjust size for smaller screens */
-    height: 90px;
-  }
-}
-
-/* On very small screens, stack them */
-@media (max-width: 575px) {
-  .hobbies-grid .hobby-item {
-    flex: 0 0 100%; /* 1 item per row on very small screens */
-    max-width: 100%;
-  }
-}
-
-/* Grid for skills/details */
-.row-cols-2 > .col {
-  flex: 0 0 50%;
-  max-width: 50%;
-}
-
-.row-cols-sm-2 > .col {
-  /* Default for small screens and up */
-  flex: 0 0 50%;
-  max-width: 50%;
-}
-
-@media (min-width: 768px) {
-  .row-cols-md-4 > .col {
-    flex: 0 0 25%; /* 4 columns on medium screens and up */
-    max-width: 25%;
-  }
-}
-
-@media (min-width: 992px) {
-  .row-cols-lg-4 > .col {
-    flex: 0 0 25%; /* 4 columns on large screens and up */
-    max-width: 25%;
-  }
-}
-
-.gy-3 {
-  /* Vertical gutter (gap-y) */
-  row-gap: 1rem; /* Adjust as needed */
-}
-
-.d-flex {
-  display: flex;
-}
-
-.justify-content-center {
   justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-/* Responsive adjustments */
+.hobbies-grid .hobby-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hobbies-grid .hobby-item img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive adjustments for overall layout */
 @media (max-width: 991px) {
-  /* Adjust breakpoint for stacking */
   .about-content-row {
-    flex-direction: column; /* Stack image and text on smaller screens */
+    flex-direction: column;
   }
   .col-lg-4,
   .col-lg-8 {
-    flex: 0 0 100%; /* Take full width when stacked */
+    flex: 0 0 100%;
     max-width: 100%;
   }
   .order-lg-last {
-    order: 0; /* Reset order on small screens so image is still above hobbies */
+    order: 0;
   }
   .headshot {
-    margin-bottom: 20px; /* Add space between headshot and text when stacked */
+    margin-bottom: 20px;
+  }
+
+  .two-column-layout {
+    flex-direction: column; /* Stack education and hobbies on smaller screens */
+  }
+  .education-column,
+  .hobbies-column {
+    min-width: unset; /* Remove min-width when stacked */
   }
 }
 
-/* Responsive adjustments */
-@media (max-width: 900px) {
-  .home {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 2rem;
-    min-height: 80vh;
+/* Responsive adjustments for hobbies grid on very small screens */
+@media (max-width: 575px) {
+  .hobbies-grid {
+    grid-template-columns: 1fr; /* 1 column for hobbies on very small screens */
   }
-
-  .home-content {
-    padding: 1rem;
-    max-width: 100%; /* Allow content to take full width */
-  }
-
-  .home-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .container-typewriter {
-    justify-content: center;
-  }
-
-  .container-typewriter h3 {
-    font-size: 1.5rem;
-  }
-
-  .btn-group {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .social-icons {
-    justify-content: center;
-  }
-
-  .home-img {
-    /* Adjust size for smaller screens */
-    width: 180px;
-    height: 180px;
-    margin-top: 2rem; /* Add some space above the image when stacked */
-    margin-left: auto; /* Ensure it stays centered even in column layout */
-    margin-right: auto; /* Ensure it stays centered even in column layout */
+  .hobbies-grid .hobby-item img {
+    width: 70px;
+    height: 80px;
   }
 }
