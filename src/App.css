@@ -37,9 +37,8 @@ h1 {
 }
 
 h3 {
-  font-size: 3rem;
   margin-bottom: 1rem;
-  font: 700 3rem "Space Grotesk", sans-serif;
+  font: 700 2rem "Space Grotesk", sans-serif;
 }
 
 p {
@@ -415,4 +414,112 @@ p {
     width: 70px;
     height: 80px;
   }
+}
+
+/* Timeline Section */
+
+body {
+  background: #0d0d0d;
+  color: white;
+  font-family: "JetBrains Mono", monospace;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline-container {
+  position: relative;
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.timeline-title {
+  padding-top: 45px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00eaff;
+  margin-bottom: 2rem;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 175px;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, #00eaff, #2a48aa);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.timeline-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 575px;
+  margin: 2rem 0;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.timeline-card.left {
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+}
+
+.timeline-card.right {
+  margin-right: 0;
+  margin-left: auto;
+  text-align: left;
+}
+
+.company {
+  color: #00eaff;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.details {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.pill {
+  background: #00283e;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: #00eaff;
+  border: 1px solid #00eaff;
+}
+
+.glow-dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #00ffff;
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+  z-index: 3;
+}
+
+.top-right {
+  top: -1px;
+  right: -17px;
+}
+
+.top-left {
+  top: -1px;
+  left: -17px;
 }
