@@ -62,9 +62,12 @@ const About = () => (
                       paddingLeft: "10px",
                     }}
                   />
-                  <div style={{ textAlign: "Center" }}>
+                  <div
+                    className="education-details"
+                    style={{ textAlign: "left" }}
+                  >
                     {" "}
-                    {/* Align text to left */}
+                    {/* Added class and ensured left alignment */}
                     <p style={{ margin: 0 }}>
                       Undergraduate Computer Science Major <br />
                       VP of Recruitment @ Blueprint <br />
@@ -74,7 +77,7 @@ const About = () => (
                 </div>
               </div>
               <div className="hobbies-column">
-                <p className="hobbies-title">Hobbies and Interests:</p>
+                <p className="hobbies-title">🚀 Hobbies and Interests:</p>
                 <div className="hobbies-grid">
                   <div className="hobby-item">
                     <img src={f1long} alt="F1" />
@@ -91,6 +94,10 @@ const About = () => (
                 </div>
               </div>
             </div>
+            <p className="aboutBio">
+              Im a rising senior whos passionate about technology. I enjoy
+              building whether with software or hardware.
+            </p>
           </div>
         </div>
         <div className="col-lg-4 d-flex justify-content-center order-lg-last">

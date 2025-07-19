@@ -265,7 +265,7 @@ p {
 }
 
 .headshot {
-  margin-top: 60px;
+  margin-top: 40px;
   width: 450px;
   height: 460px;
   border-radius: 20px;
@@ -334,24 +334,29 @@ p {
   margin-top: 0; /* Remove top margin to align with education content */
   margin-bottom: 10px;
   padding-top: 8px;
-  padding-left: 80px;
+  padding-left: 60px;
   font-weight: bold;
   font-size: 1.5rem;
   display: flex;
   align-items: center;
 }
 
+.aboutBio {
+  text-align: left;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #ccc; /* Lighter text color for better readability */
+  padding: 0 20px; /* Add some horizontal padding */
+}
+
 /* Hobbies Grid Styling (CSS Grid for precise layout) */
 .hobbies-grid {
   display: grid;
-  grid-template-columns: repeat(
-    2,
-    1fr
-  ); /* 2 columns for hobbies within its column */
-  gap: 15px;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  row-gap: 15px; /* keep vertical spacing */
   justify-items: center;
   align-items: center;
-  padding: 0; /* Remove padding as the parent column handles it */
+  padding: 0;
 }
 
 .hobbies-grid .hobby-item {
@@ -359,13 +364,15 @@ p {
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 0px;
+  margin: 0px;
 }
 
 .hobbies-grid .hobby-item img {
   width: 100px;
   height: 100px;
   object-fit: contain;
-  border-radius: 10px;
+  border-radius: 20px;
   transition: transform 0.3s ease-in-out;
 }
 
