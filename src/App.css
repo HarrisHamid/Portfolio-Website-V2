@@ -716,16 +716,15 @@ body {
 }
 
 .logo-image {
+  padding-top: 10px;
+  padding-bottom: 10px;
   max-width: 400px;
   max-height: 200px;
   width: auto;
   height: auto;
   object-fit: contain;
   border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
-  background: white;
-  padding: 15px;
 }
 
 .project-card:hover .logo-image {
