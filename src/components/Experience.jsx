@@ -2,41 +2,61 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "../App.css";
+import blueprint from "../assets/blueprint.jpeg";
+import mitre from "../assets/mitre.jpeg";
+import proof from "../assets/ProOF.jpeg";
+import msa from "../assets/msa.jpeg";
+import headstarter from "../assets/headstarter.jpeg";
 
 const experiences = [
   {
     title: "Vice President of Recruitment",
     company: "Blueprint",
-    years: "April 2025 - Present",
+    years: "Apr 2025 - Present",
     location: "Hoboken, NJ",
-    stack: [""],
+    stack: ["Leadership", "Recruitment", "Communication"],
+    logo: blueprint,
   },
   {
     title: "Software Engineer Intern",
     company: "MITRE",
-    years: "June 2025 - August 2025",
+    years: "Jun 2025 - Aug 2025",
     location: "Bedford, MA",
     stack: ["Python", "Ubuntu", "AFSIM"],
+    logo: mitre,
   },
   {
     title: "Software Developer ",
     company: "Blueprint",
-    years: "September 2024 - May 2024",
+    years: "Sep 2024 - May 2024",
     location: "Hoboken, NJ",
-    stack: ["React", "Next.js", "Tailwind CSS"],
+    stack: ["React", "Java", "JavaScript"],
+    logo: blueprint,
   },
+  {
+    title: "Software Engineering Fellow ",
+    company: "Headstarter AI",
+    years: "Jul 2024 - Sep 2024",
+    location: "Remote",
+    stack: ["React", "Next.js", "Firebase", "Gemini/OpenAI API"],
+    logo: headstarter,
+  },
+
   {
     title: "ML Researcher",
     company: "ProOF Lab",
     years: "May 2024 - August 2024",
-    stack: ["React", "Next.js", "Tailwind CSS"],
+    stack: ["Python", "Google Colab", "Meshlab"],
+    location: "Remote",
+    logo: proof,
   },
   {
     title: "Brotherhood Coordinator",
     company: "Muslim Student Association",
     years: "April 2024 - Present",
     location: "Hoboken, NJ",
-    stack: [""],
+    stack: ["Leadership", "Community Building", "Event Planning"],
+    logo: msa,
   },
   {
     title: "Software Engineer Intern",
@@ -44,6 +64,7 @@ const experiences = [
     years: "September 2024 - May 2024",
     location: "Hoboken, NJ",
     stack: ["Python", "Flask", "Boostrap"],
+    logo: proof,
   },
 ];
 
@@ -61,6 +82,17 @@ const Experience = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.3 }}
           >
+            <img
+              src={exp.logo}
+              alt={`${exp.company} logo`}
+              className="company-logo"
+              style={{
+                width: "50px",
+                height: "50px",
+                borderRadius: "25%",
+                marginBottom: "10px",
+              }}
+            />
             {/* Glowing dot */}
             <div
               className={`glow-dot ${
