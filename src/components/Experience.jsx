@@ -51,7 +51,7 @@ const experiences = [
     logo: proof,
   },
   {
-    title: "Brotherhood Coordinator",
+    title: "Brotherhood Chair",
     company: "Muslim Student Association",
     years: "April 2024 - Present",
     location: "Hoboken, NJ",

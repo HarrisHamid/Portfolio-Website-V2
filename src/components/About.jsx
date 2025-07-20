@@ -3,10 +3,10 @@ import profilePic from "../assets/profile.png";
 import "../App.css";
 import ufcpic from "../assets/ufc_bw.png";
 import f1long from "../assets/f1long.png";
-import guitar from "../assets/guitar.png"; // Not used in the current image, but kept for completeness
+import guitar from "../assets/guitar.png";
 import climbing from "../assets/rc.jpg";
 import karate from "../assets/karate.png";
-import SchoolIcon from "@mui/icons-material/School"; // Not used in the current image
+import SchoolIcon from "@mui/icons-material/School";
 import Stevens from "../assets/sit.jpg";
 
 const About = () => (
@@ -19,83 +19,68 @@ const About = () => (
       </div>
       <div className="row align-self-center about-content-row">
         <div className="col-lg-8 content align-self-center">
-          <div className="about-info-paragraph">
-            <div className="two-column-layout">
-              {" "}
-              {/* New wrapper for the two columns */}
-              <div className="education-column">
-                <p>
-                  <span
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(to right, #2a48aa, #00eaff, #2a48aa)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
-                      color: "transparent",
-                      fontWeight: "bold",
-                      padding: "0 5px",
-                      fontSize: "1.8rem",
-                    }}
-                  >
-                    🎓 EDUCATION
-                  </span>
-                </p>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "20px",
-                    paddingTop: "10px",
-                    position: "relative",
-                    justifyContent: "flex-start", // Align to start for education
-                  }}
-                >
-                  <img
-                    src={Stevens}
-                    alt="Stevens Institute of Technology"
-                    style={{
-                      width: "200px",
-                      height: "200px",
-                      objectFit: "cover",
-                      borderRadius: "20px",
-                      paddingLeft: "10px",
-                    }}
-                  />
-                  <div
-                    className="education-details"
-                    style={{ textAlign: "left" }}
-                  >
-                    {" "}
-                    {/* Added class and ensured left alignment */}
-                    <p style={{ margin: 0 }}>
-                      Undergraduate Computer Science Major <br />
-                      VP of Recruitment @ Blueprint <br />
-                      Brotherhood Coordinator @ MSA <br />Σ Φ Ε
-                    </p>
-                  </div>
+          <div className="about-info-paragraph-minimal">
+            {/* Education Section */}
+            <div className="education-section-minimal">
+              <h3 className="section-heading">🎓 Education</h3>
+              <div className="education-content-minimal">
+                <div className="education-left-bar"></div>
+                <div className="education-details-minimal">
+                  <h4>Bachelor of Computer Science</h4>
+                  <p className="university-name">
+                    Stevens Institute of Technology
+                  </p>
+                  <p className="year-range">2022 - 2026</p>
+                  {/* <p className="description">
+                    Undergraduate Computer Science Major specializing in
+                    Software Engineering. Currently a rising senior passionate
+                    about technology and building innovative solutions.
+                  </p> */}
                 </div>
-              </div>
-              <div className="hobbies-column">
-                <p className="hobbies-title">🚀 Hobbies and Interests:</p>
-                <div className="hobbies-grid">
-                  <div className="hobby-item">
-                    <img src={f1long} alt="F1" />
-                  </div>
-                  <div className="hobby-item">
-                    <img src={ufcpic} alt="UFC" />
-                  </div>
-                  <div className="hobby-item">
-                    <img src={karate} alt="Karate" />
-                  </div>
-                  <div className="hobby-item">
-                    <img src={climbing} alt="Rock Climbing" />
-                  </div>
+                <div className="education-image">
+                  {/* <img src={Stevens} alt="Stevens Institute of Technology" /> */}
                 </div>
               </div>
             </div>
-            <p className="aboutBio">
-              Im a rising senior whos passionate about technology. I enjoy
+
+            {/* Clubs/Organizations Section */}
+            <div className="organizations-section-minimal">
+              <h3 className="section-heading">🏢 Clubs / Organizations</h3>
+              <div className="organizations-content-minimal">
+                <div className="organizations-left-bar"></div>
+                <div className="organizations-list-minimal">
+                  <div className="org-item">
+                    • VP of Recruitment @ Blueprint
+                  </div>
+                  <div className="org-item">
+                    • Brotherhood Coordinator @ MSA
+                  </div>
+                  <div className="org-item">• Σ Φ Ε (Sigma Phi Epsilon)</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Hobbies Section */}
+            <div className="hobbies-section-minimal">
+              <h3 className="section-heading">🚀 Hobbies and Interests</h3>
+              <div className="hobbies-horizontal">
+                <div className="hobby-item-horizontal">
+                  <img src={f1long} alt="Formula 1" />
+                </div>
+                <div className="hobby-item-horizontal">
+                  <img src={ufcpic} alt="UFC" />
+                </div>
+                <div className="hobby-item-horizontal">
+                  <img src={karate} alt="Karate" />
+                </div>
+                <div className="hobby-item-horizontal">
+                  <img src={climbing} alt="Rock Climbing" />
+                </div>
+              </div>
+            </div>
+
+            <p className="aboutBio-minimal">
+              I'm a rising senior who's passionate about technology. I enjoy
               building whether with software or hardware.
             </p>
           </div>
