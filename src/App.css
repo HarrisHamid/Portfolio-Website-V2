@@ -670,7 +670,7 @@ body {
 
 .project-card {
   max-width: 400px;
-  max-height: 460px;
+  max-height: 600px;
   background: white;
   border-radius: 24px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -685,9 +685,52 @@ body {
 }
 
 .project-header {
-  height: 160px;
-  background: linear-gradient(135deg, #00eaff 0%, #9333ea 50%, #5b8d9a 100%);
+  height: 200px;
   position: relative;
+  overflow: hidden;
+}
+
+/* Banner Header - Full width images */
+.banner-header {
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .banner-image {
+  transform: scale(1.05);
+}
+
+/* Logo Header - Centered rounded logos */
+.logo-header {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.logo-image {
+  max-width: 400px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  background: white;
+  padding: 15px;
+}
+
+.project-card:hover .logo-image {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
 }
 
 .project-content {

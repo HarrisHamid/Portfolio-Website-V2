@@ -1,15 +1,32 @@
 import React from "react";
 import "../App.css";
-
+import Micromobile from "../assets/Project_Images/Micromobile.png";
+import PantryTracker from "../assets/Project_Images/PantryTracker.png";
+import capfinity from "../assets/Project_Images/capfinity.png";
+import PolyGlot from "../assets/Project_Images/polyglot.png";
+import triva from "../assets/Project_Images/trivia.png";
+import toptech from "../assets/Project_Images/toptech.png";
 const ProjectCard = ({
-  title = "E-commerce Platform",
-  description = "A full-stack e-commerce solution with modern UI and seamless shopping experience",
-  technologies = ["React", "Node.js", "MongoDB", "Express"],
+  title = "",
+  description = "",
+  technologies = [""],
+  image = "",
+  imageType = "",
 }) => {
   return (
     <div className="project-card">
-      <div className="project-header">
-        {/* Purple gradient background area */}
+      <div
+        className={`project-header ${
+          imageType === "logo" ? "logo-header" : "banner-header"
+        }`}
+      >
+        <img
+          src={image}
+          alt={title}
+          className={`project-image ${
+            imageType === "logo" ? "logo-image" : "banner-image"
+          }`}
+        />
       </div>
       <div className="project-content">
         <h2 className="project-title">{title}</h2>
@@ -31,7 +48,7 @@ const ProjectsShowcase = () => {
   const projects = [
     {
       title: "MicroMobile",
-      description: "A full-stack micro-mobility vechicle sharing platform",
+      description: "A full-stack micro-mobility vehicle rental platform",
       technologies: [
         "JavaScript",
         "Node.js",
@@ -40,11 +57,16 @@ const ProjectsShowcase = () => {
         "Bootstrap",
         "Handlebars",
       ],
+      image: Micromobile,
+      imageType: "s",
     },
     {
-      title: "TriviaNight",
-      description: "Collaborative trivia game platform with real-time updates",
-      technologies: ["C", "Socket Programming", "TCP/IP"],
+      title: "PantryTracker",
+      description:
+        "A Full-Stack AI pantry management and recipe suggestion app",
+      technologies: ["JavaScript", "Next.js", "Gemini API", "Firebase"],
+      image: PantryTracker,
+      imageType: "banner",
     },
     {
       title: "Capfinity",
@@ -56,11 +78,8 @@ const ProjectsShowcase = () => {
         "Pandas",
         "NumPy",
       ],
-    },
-    {
-      title: "PantryTracker",
-      description: "Backtracking algorithm based USA car sales",
-      technologies: ["JavaScript", "Next.js", "Gemini API"],
+      image: capfinity,
+      imageType: "logo",
     },
     {
       title: "PolyGlot",
@@ -72,19 +91,37 @@ const ProjectsShowcase = () => {
         "Pandas",
         "NumPy",
       ],
+      image: PolyGlot,
+      imageType: "logo",
     },
     {
-      title: "AI Customer Support Bot",
-      description: "Backtracking algorithm based USA car sales",
-      technologies: ["JavaScript", "Next.js", "OpenAI API"],
+      title: "TriviaNight",
+      description: "Collaborative trivia game platform with real-time updates",
+      technologies: ["C", "Socket Programming", "TCP/IP"],
+      image: triva,
+      imageType: "logo",
+    },
+    {
+      title: "TopTechChats",
+      description: "Collaborative trivia game platform with real-time updates",
+      technologies: [
+        "React",
+        "TypeScript",
+        "Gemini API",
+        "Next.js",
+        "Tailwind CSS",
+        "shadcn",
+        "supabase",
+        "Alpha Vantage API",
+      ],
+      image: toptech,
+      imageType: "banner",
     },
   ];
 
   return (
     <section id="projects" className="projects-section">
-      <div className="section-title">
-        <h2>Projects</h2>
-      </div>
+      <h2 className="section-title">My Projects</h2>
       <div className="projects-showcase">
         {projects.map((project, index) => (
           <ProjectCard
@@ -92,6 +129,8 @@ const ProjectsShowcase = () => {
             title={project.title}
             description={project.description}
             technologies={project.technologies}
+            image={project.image}
+            imageType={project.imageType}
           />
         ))}
       </div>
