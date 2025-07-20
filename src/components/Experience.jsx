@@ -22,7 +22,7 @@ const experiences = [
     company: "MITRE",
     years: "Jun 2025 - Aug 2025",
     location: "Bedford, MA",
-    stack: ["Python", "Ubuntu", "AFSIM"],
+    stack: ["Python", "Ubuntu", "AFSIM", "GitLab"],
     logo: mitre,
   },
   {
@@ -38,7 +38,7 @@ const experiences = [
     company: "Headstarter AI",
     years: "Jul 2024 - Sep 2024",
     location: "Remote",
-    stack: ["React", "Next.js", "Firebase", "Gemini/OpenAI API"],
+    stack: ["React", "JavaScript", "Next.js", "Firebase", "Gemini/OpenAI API"],
     logo: headstarter,
   },
 
