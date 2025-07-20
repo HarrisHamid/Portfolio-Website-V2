@@ -48,7 +48,8 @@ const ProjectsShowcase = () => {
   const projects = [
     {
       title: "MicroMobile",
-      description: "A full-stack micro-mobility vehicle rental platform",
+      description:
+        "A full-stack peer-to-peer micro-mobility vehicle rental platform",
       technologies: [
         "JavaScript",
         "Node.js",
@@ -70,7 +71,8 @@ const ProjectsShowcase = () => {
     },
     {
       title: "Capfinity",
-      description: "Backtracking algorithm based USA car sales",
+      description:
+        "Investment strategy tool that dynamically adjusts a portfolio based on month-over-month changes in car sales data in America",
       technologies: [
         "Python",
         "Matplotlib",
@@ -83,14 +85,9 @@ const ProjectsShowcase = () => {
     },
     {
       title: "PolyGlot",
-      description: "Backtracking algorithm based USA car sales",
-      technologies: [
-        "Python",
-        "Matplotlib",
-        "Jupyter Notebook",
-        "Pandas",
-        "NumPy",
-      ],
+      description:
+        "A Full-Stack interactive language learning tool that helps you learn Cherokee through short bilingual texts, authentic audio, and instant word translation",
+      technologies: ["React", "JavaScript", "FastAPI", "MongoDB", "Python"],
       image: PolyGlot,
       imageType: "logo",
     },
@@ -121,7 +118,11 @@ const ProjectsShowcase = () => {
 
   return (
     <section id="projects" className="projects-section">
-      <h2 className="section-title">My Projects</h2>
+      <div className="section-title">
+        <h2>
+          <span></span>Projects<span></span>
+        </h2>
+      </div>{" "}
       <div className="projects-showcase">
         {projects.map((project, index) => (
           <ProjectCard

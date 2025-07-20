@@ -72,7 +72,11 @@ const Experience = () => {
   return (
     <section id="experience" className="experience-section">
       <div className="timeline-container">
-        <h2 className="timeline-title">EXPERIENCE</h2>
+        <div className="section-title-time">
+          <h2>
+            <span></span>Experience<span></span>
+          </h2>
+        </div>{" "}
         <div className="timeline-line" />
         {experiences.map((exp, index) => (
           <motion.div

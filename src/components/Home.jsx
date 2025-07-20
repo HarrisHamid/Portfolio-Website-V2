@@ -47,7 +47,7 @@ const Home = () => {
 
   return (
     <section className="home" id="home">
-      {/* <PixelAnimation /> */}
+      <PixelAnimation />
       <div className="home-content">
         <h1>
           <span className="highlight-red">Harris Hamid</span>

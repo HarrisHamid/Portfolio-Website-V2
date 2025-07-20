@@ -4,8 +4,8 @@
 
 h1,
 h2,
-h4 title {
-  font-family: "Goldman", sans-serif;
+title {
+  font-family: "Anta", sans-serif;
 }
 
 html {
@@ -14,17 +14,16 @@ html {
 
 body {
   margin: 0;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Anta", sans-serif;
   background-color: #1a1a1a;
   color: #fff;
   overflow-x: hidden;
-  font-family: "JetBrains Mono", monospace;
 }
 
 h1 {
   font-size: 5rem;
   margin-bottom: 1rem;
-  font: 700 5rem "Space Grotesk", sans-serif;
+  font: 700 5rem "Anta", sans-serif;
 }
 
 .home-content h1 .highlight-red {
@@ -33,7 +32,6 @@ h1 {
   background-clip: text;
   color: transparent;
   font-weight: 700;
-  font-family: "Zen Dots", sans-serif;
 }
 
 h3 {
@@ -279,8 +277,6 @@ p {
 }
 
 /* Minimalist About Section Styles - Add these to your existing App.css */
-
-/* Replace the existing about-info-paragraph styles with this minimalist version */
 .about-info-paragraph-minimal {
   background: rgba(230, 224, 224, 0.03);
   padding: 30px;
@@ -548,6 +544,23 @@ body {
   padding: 0;
 }
 
+.section-title-time {
+  text-align: center; /* Add this to center the h2 */
+}
+
+.section-title-time h2 {
+  padding-top: 33px;
+  font-size: 3em;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #2a48aa, #00eaff, #2a48aa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  display: inline-block;
+  /* Remove the flex properties */
+}
+
 .timeline-container {
   position: relative;
   padding: 3rem 1rem;
@@ -560,13 +573,12 @@ body {
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
-  color: #00eaff;
   margin-bottom: 2rem;
 }
 
 .timeline-line {
   position: absolute;
-  top: 175px;
+  top: 190px;
   left: 50%;
   width: 2px;
   height: 91%;
@@ -664,6 +676,7 @@ body {
 }
 
 /* Project Card Styles */
+
 .projects-section {
   padding-top: 100px;
 }
@@ -671,12 +684,13 @@ body {
 .project-card {
   max-width: 400px;
   max-height: 600px;
-  background: white;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 24px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: all 0.3s ease;
   margin: 20px;
+  z-index: 1;
 }
 
 .project-card:hover {
@@ -739,14 +753,14 @@ body {
 .project-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1f2937;
+  color: #ffffff;
   margin: 0 0 16px 0;
   line-height: 1.2;
 }
 
 .project-description {
   font-size: 1.1rem;
-  color: #6b7280;
+  color: #ffffff;
   line-height: 1.6;
   margin: 0 0 24px 0;
 }
@@ -758,17 +772,16 @@ body {
 }
 
 .tech-tag {
-  background: #e5e7eb;
-  color: #374151;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  background: #00283e;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: #00eaff;
+  border: 1px solid #00eaff;
 }
 
 .tech-tag:hover {
-  background: #d1d5db;
+  background: #020943;
   transform: scale(1.05);
 }
 
