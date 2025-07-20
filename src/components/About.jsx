@@ -50,12 +50,14 @@ const About = () => (
                 <div className="organizations-left-bar"></div>
                 <div className="organizations-list-minimal">
                   <div className="org-item">
-                    • VP of Recruitment @ Blueprint
+                    • Vice President of Recruitment @ Blueprint
                   </div>
                   <div className="org-item">
-                    • Brotherhood Coordinator @ MSA
+                    • Brotherhood Chair @ Muslim Student Association
                   </div>
-                  <div className="org-item">• Σ Φ Ε (Sigma Phi Epsilon)</div>
+                  <div className="org-item">
+                    • Member of Sigma Phi Epsilon (Σ Φ Ε)
+                  </div>
                 </div>
               </div>
             </div>
@@ -79,10 +81,10 @@ const About = () => (
               </div>
             </div>
 
-            <p className="aboutBio-minimal">
+            {/* <p className="aboutBio-minimal">
               I'm a rising senior who's passionate about technology. I enjoy
               building whether with software or hardware.
-            </p>
+            </p> */}
           </div>
         </div>
         <div className="col-lg-4 d-flex justify-content-center order-lg-last">
