@@ -70,7 +70,7 @@ const ProjectsShowcase = () => {
       imageType: "banner",
     },
     {
-      title: "Capfinity",
+      title: "Capfinity - SpartaHack9",
       description:
         "Investment strategy tool that dynamically adjusts a portfolio based on month-over-month changes in car sales data in America",
       technologies: [
@@ -84,7 +84,7 @@ const ProjectsShowcase = () => {
       imageType: "logo",
     },
     {
-      title: "PolyGlot",
+      title: "PolyGlot - HackPrinceton",
       description:
         "A Full-Stack interactive language learning tool that helps you learn Cherokee through short bilingual texts, authentic audio, and instant word translation",
       technologies: ["React", "JavaScript", "FastAPI", "MongoDB", "Python"],
