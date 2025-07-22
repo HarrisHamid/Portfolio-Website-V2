@@ -1,13 +1,10 @@
 import React from "react";
 import profilePic from "../assets/profile.png";
 import "../App.css";
-import ufcpic from "../assets/ufc_bw.png";
-import f1long from "../assets/f1long.png";
-import guitar from "../assets/guitar.png";
-import climbing from "../assets/rc.jpg";
-import karate from "../assets/karate.png";
-import SchoolIcon from "@mui/icons-material/School";
-import Stevens from "../assets/sit.jpg";
+import f1long from "../assets/Hobby_Images/F1-Logo.png";
+import climbing from "../assets/Hobby_Images/rc.jpg";
+import karate from "../assets/Hobby_Images/karate.png";
+import ufc from "../assets/Hobby_Images/ufc.png";
 
 const About = () => (
   <section id="about" className="about-section">
@@ -70,7 +67,7 @@ const About = () => (
                   <img src={f1long} alt="Formula 1" />
                 </div>
                 <div className="hobby-item-horizontal">
-                  <img src={ufcpic} alt="UFC" />
+                  <img src={ufc} alt="UFC" />
                 </div>
                 <div className="hobby-item-horizontal">
                   <img src={karate} alt="Karate" />

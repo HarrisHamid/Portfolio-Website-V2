@@ -20,7 +20,7 @@ const PixelAnimation = () => {
           },
         },
         color: {
-          value: "",
+          value: "transparent",
         },
         shape: {
           type: "circle",
