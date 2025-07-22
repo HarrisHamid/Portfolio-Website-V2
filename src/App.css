@@ -841,6 +841,7 @@ body {
   padding: 40px 30px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   transition: all 0.3s ease;
+  z-index: 1;
 }
 
 .skill-category:hover {
@@ -865,6 +866,7 @@ body {
   justify-content: center;
   gap: 25px;
   align-items: center;
+  z-index: 1;
 }
 
 .skill-card {
@@ -879,6 +881,7 @@ body {
   transition: all 0.3s ease;
   min-width: 120px;
   cursor: pointer;
+  z-index: 1;
 }
 
 .skill-card:hover {
