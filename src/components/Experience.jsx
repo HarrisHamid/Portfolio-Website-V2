@@ -43,7 +43,7 @@ const experiences = [
   },
 
   {
-    title: "ML Researcher",
+    title: "Machine Learning Researcher",
     company: "ProOF Lab",
     years: "May 2024 - August 2024",
     stack: ["Python", "Google Colab", "Meshlab"],

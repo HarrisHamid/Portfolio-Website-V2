@@ -94,7 +94,7 @@ const ProjectsShowcase = () => {
     {
       title: "TriviaNight",
       description:
-        "Collaborative terminal trivia game platform with real-time updates and mutli client support",
+        "Collaborative terminal run trivia game with real-time updates and multi-client support",
       technologies: ["C", "Socket Programming", "TCP/IP"],
       image: triva,
       imageType: "logo",

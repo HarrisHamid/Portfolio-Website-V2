@@ -11,7 +11,7 @@ export default function Skill() {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
     },
     {
-      name: "c",
+      name: "C",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
     },
     {
@@ -66,7 +66,7 @@ export default function Skill() {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg",
     },
     {
-      name: "matplotlib",
+      name: "Matplotlib",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg",
     },
   ];
