@@ -93,14 +93,16 @@ const ProjectsShowcase = () => {
     },
     {
       title: "TriviaNight",
-      description: "Collaborative trivia game platform with real-time updates",
+      description:
+        "Collaborative terminal trivia game platform with real-time updates and mutli client support",
       technologies: ["C", "Socket Programming", "TCP/IP"],
       image: triva,
       imageType: "logo",
     },
     {
       title: "TopTechChats",
-      description: "Collaborative trivia game platform with real-time updates",
+      description:
+        "Full-Stack AI chatbot and news aggregator for top 10 tech companies",
       technologies: [
         "React",
         "TypeScript",
