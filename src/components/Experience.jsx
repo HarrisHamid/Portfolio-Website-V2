@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import "../App.css";
 import blueprint from "../assets/Experience_Photos/blueprint.jpeg";
-import mitre from "../assets/Experience_Photos/mitre.jpeg";
+import mitre from "../assets/Experience_Photos/MITRE.jpeg";
 import proof from "../assets/Experience_Photos/ProOF.jpeg";
 import msa from "../assets/Experience_Photos/msa.jpeg";
 import headstarter from "../assets/Experience_Photos/headstarter.jpeg";
