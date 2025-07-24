@@ -28,7 +28,7 @@ const experiences = [
   {
     title: "Software Developer ",
     company: "Blueprint",
-    years: "Sep 2024 - May 2024",
+    years: "Sep 2023 - May 2024",
     location: "Hoboken, NJ",
     stack: ["React", "Java", "JavaScript"],
     logo: blueprint,
@@ -46,7 +46,7 @@ const experiences = [
     title: "Machine Learning Researcher",
     company: "ProOF Lab",
     years: "May 2024 - August 2024",
-    stack: ["Python", "Google Colab", "Meshlab"],
+    stack: ["Python", "GoogleColab", "Meshlab"],
     location: "Remote",
     logo: proof,
   },
@@ -61,9 +61,9 @@ const experiences = [
   {
     title: "Software Engineer Intern",
     company: "ProOF Lab",
-    years: "September 2024 - May 2024",
+    years: "Oct 2023 - May 2024",
     location: "Hoboken, NJ",
-    stack: ["Python", "Flask", "Boostrap"],
+    stack: ["Python", "Flask", "Bootstrap"],
     logo: proof,
   },
 ];

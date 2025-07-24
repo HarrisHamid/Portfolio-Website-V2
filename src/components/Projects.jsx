@@ -49,7 +49,7 @@ const ProjectsShowcase = () => {
     {
       title: "MicroMobile",
       description:
-        "A full-stack peer-to-peer micro-mobility vehicle rental platform",
+        "Full-stack peer-to-peer micro-mobility vehicle rental platform",
       technologies: [
         "JavaScript",
         "Node.js",
@@ -63,8 +63,7 @@ const ProjectsShowcase = () => {
     },
     {
       title: "PantryTracker",
-      description:
-        "A Full-Stack AI pantry management and recipe suggestion app",
+      description: "Full-stack AI pantry management and recipe suggestion app",
       technologies: ["JavaScript", "Next.js", "Gemini API", "Firebase"],
       image: PantryTracker,
       imageType: "banner",
@@ -86,7 +85,7 @@ const ProjectsShowcase = () => {
     {
       title: "PolyGlot - HackPrinceton",
       description:
-        "A Full-Stack interactive language learning tool that helps you learn Cherokee through short bilingual texts, authentic audio, and instant word translation",
+        "Full-Stack interactive language learning tool that helps you learn Cherokee through short bilingual texts, authentic audio, and instant word translation",
       technologies: ["React", "JavaScript", "FastAPI", "MongoDB", "Python"],
       image: PolyGlot,
       imageType: "logo",
@@ -109,8 +108,7 @@ const ProjectsShowcase = () => {
         "Gemini API",
         "Next.js",
         "Tailwind CSS",
-        "shadcn",
-        "supabase",
+        "Shadcn",
         "Alpha Vantage API",
       ],
       image: toptech,
