@@ -4,7 +4,7 @@ import Micromobile from "../assets/Project_Images/Micromobile.png";
 import PantryTracker from "../assets/Project_Images/PantryTracker.png";
 import capfinity from "../assets/Project_Images/capfinity.png";
 import PolyGlot from "../assets/Project_Images/polyglot.png";
-import triva from "../assets/Project_Images/trivia.png";
+import triva from "../assets/Project_Images/Trivia.png";
 import toptech from "../assets/Project_Images/toptech.png";
 const ProjectCard = ({
   title = "",
