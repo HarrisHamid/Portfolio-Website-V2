@@ -11,7 +11,7 @@ const Home = () => {
     "CS Major",
     "Martial Artist",
     "Tech Enthusiast",
-    "Life Longer Learner",
+    "Life Long Learner",
   ];
   const sleepTime = 100;
 
