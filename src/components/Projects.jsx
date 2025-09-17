@@ -6,6 +6,8 @@ import capfinity from "../assets/Project_Images/capfinity.png";
 import PolyGlot from "../assets/Project_Images/polyglot.png";
 import triva from "../assets/Project_Images/Trivia.png";
 import toptech from "../assets/Project_Images/toptech.png";
+import local from "../assets/Project_Images/local.svg";
+
 const ProjectCard = ({
   title = "",
   description = "",
@@ -46,6 +48,14 @@ const ProjectCard = ({
 // Example usage with multiple projects
 const ProjectsShowcase = () => {
   const projects = [
+    {
+      title: "LocalSentinel",
+      description:
+        "VSCode extension that scans code for potential security vulnerabilities",
+      technologies: ["JavaScript", "Python", "LM Studio"],
+      image: local,
+      imageType: "logo",
+    },
     {
       title: "MicroMobile",
       description:
