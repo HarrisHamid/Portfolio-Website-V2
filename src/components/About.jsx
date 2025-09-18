@@ -23,7 +23,7 @@ const About = () => (
               <div className="education-content-minimal">
                 <div className="education-left-bar"></div>
                 <div className="education-details-minimal">
-                  <h4>Bachelor of Computer Science</h4>
+                  <h4>B.S. in Computer Science</h4>
                   <p className="university-name">
                     Stevens Institute of Technology
                   </p>
