@@ -7,6 +7,9 @@ import mitre from "../assets/Experience_Photos/MITRE.jpeg";
 import proof from "../assets/Experience_Photos/ProOF.jpeg";
 import msa from "../assets/Experience_Photos/msa.jpeg";
 import headstarter from "../assets/Experience_Photos/headstarter.jpeg";
+import perplex from "../assets/Experience_Photos/perplexity.jpeg";
+import stevens from "../assets/Experience_Photos/stevens.jpeg";
+import spike from "../assets/Experience_Photos/293spike.png";
 
 const experiences = [
   {
@@ -18,11 +21,27 @@ const experiences = [
     logo: blueprint,
   },
   {
+    title: "Campus Partner",
+    company: "Perplexity",
+    years: "Sept 2025 - Present",
+    location: "Hoboken, NJ",
+    stack: ["Marketing", "Sales"],
+    logo: perplex,
+  },
+  {
+    title: "Teaching Assistant",
+    company: "Stevens Institute of Technology",
+    years: "Sep 2025 - Present",
+    location: "Hoboken, NJ",
+    stack: ["C++", "Teaching"],
+    logo: stevens,
+  },
+  {
     title: "Software Engineer Intern",
     company: "MITRE",
     years: "Jun 2025 - Aug 2025",
     location: "Bedford, MA",
-    stack: ["Python", "Ubuntu", "AFSIM", "GitLab"],
+    stack: ["Python", "Linux", "AFSIM", "GitLab"],
     logo: mitre,
   },
   {
@@ -30,7 +49,7 @@ const experiences = [
     company: "Blueprint",
     years: "Sep 2023 - May 2024",
     location: "Hoboken, NJ",
-    stack: ["React", "Java", "JavaScript"],
+    stack: ["React.js", "Tailwind CSS", "JavaScript", "TypeScript"],
     logo: blueprint,
   },
   {
@@ -46,7 +65,7 @@ const experiences = [
     title: "Machine Learning Researcher",
     company: "ProOF Lab",
     years: "May 2024 - August 2024",
-    stack: ["Python", "GoogleColab", "Meshlab"],
+    stack: ["Python", "Google Colab", "Meshlab"],
     location: "Remote",
     logo: proof,
   },
@@ -63,8 +82,16 @@ const experiences = [
     company: "ProOF Lab",
     years: "Oct 2023 - May 2024",
     location: "Hoboken, NJ",
-    stack: ["Python", "Flask", "Bootstrap"],
+    stack: ["Python", "Flask", "Bootstrap", "SQLite", "SQLAlchemy"],
     logo: proof,
+  },
+  {
+    title: "Developer & Co-Driver",
+    company: "FRC Team 293 Spike",
+    years: "Oct 2018 - May 2022",
+    location: "Pennington, NJ",
+    stack: ["Java", "Electronics", "Machining"],
+    logo: spike,
   },
 ];
 
