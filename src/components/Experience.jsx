@@ -10,8 +10,17 @@ import headstarter from "../assets/Experience_Photos/headstarter.jpeg";
 import perplex from "../assets/Experience_Photos/perplexity.jpeg";
 import stevens from "../assets/Experience_Photos/stevens.jpeg";
 import spike from "../assets/Experience_Photos/293spike.png";
+import nomad from "../assets/Experience_Photos/nomad.jpeg";
 
 const experiences = [
+  {
+    title: "Platform Software Engineer Intern",
+    company: "Nomad Futurist",
+    years: "Dec 2026 - Present",
+    location: "Remote",
+    stack: ["PHP", "MySQL"],
+    logo: nomad,
+  },
   {
     title: "Vice President of Recruitment",
     company: "Blueprint",
