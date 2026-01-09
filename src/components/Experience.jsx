@@ -16,7 +16,7 @@ const experiences = [
   {
     title: "Platform Software Engineer Intern",
     company: "Nomad Futurist",
-    years: "Dec 2026 - Present",
+    years: "Dec 2025 - Present",
     location: "Remote",
     stack: ["PHP", "MySQL"],
     logo: nomad,
