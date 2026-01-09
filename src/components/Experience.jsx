@@ -32,13 +32,13 @@ const experiences = [
   {
     title: "Campus Partner",
     company: "Perplexity",
-    years: "Sept 2025 - Present",
+    years: "Sept 2025 - Dec 2025",
     location: "Hoboken, NJ",
     stack: ["Marketing", "Sales"],
     logo: perplex,
   },
   {
-    title: "Teaching Assistant",
+    title: "Teaching Assistant/Course Assistant",
     company: "Stevens Institute of Technology",
     years: "Sep 2025 - Present",
     location: "Hoboken, NJ",
