@@ -14,6 +14,14 @@ import nomad from "../assets/Experience_Photos/nomad.jpeg";
 
 const experiences = [
   {
+    title: "Software Engineer",
+    company: "MITRE",
+    years: "Jun 26 - Present",
+    location: "Bedford, MA",
+    stack: ["Python", "C++", "TypeScript", "NS-3"],
+    logo: blueprint,
+  },
+  {
     title: "Platform Software Engineer Intern",
     company: "Nomad Futurist",
     years: "Dec 2025 - Present",
@@ -119,8 +127,9 @@ const Experience = () => {
             key={index}
             className={`timeline-card ${index % 2 === 0 ? "left" : "right"}`}
             initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.3 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
           >
             <img
               src={exp.logo}
