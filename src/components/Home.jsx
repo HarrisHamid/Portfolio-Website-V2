@@ -54,10 +54,10 @@ const Home = () => {
         </h1>
 
         <div className="container-typewriter">
-          <h3>
-            {" "}
+          <h3 className="terminal-prompt">
+            <span className="prompt-arrow">&gt;</span>
             I'm a <span id="typewriter">{typedText}</span>
-            <span id="cursor">|</span>
+            <span id="cursor" className="terminal-cursor"></span>
           </h3>
         </div>
 
