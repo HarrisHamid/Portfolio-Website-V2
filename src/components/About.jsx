@@ -1,6 +1,7 @@
 import React from "react";
 import profilePic from "../assets/profile.png";
 import "../App.css";
+import Icon from "./Icon";
 import f1long from "../assets/Hobby_Images/F1-Logo.png";
 import climbing from "../assets/Hobby_Images/rc.jpg";
 import karate from "../assets/Hobby_Images/karate.png";
@@ -14,7 +15,7 @@ const About = () => (
           <div className="about-info-paragraph-minimal">
             {/* Education Section */}
             <div className="education-section-minimal">
-              <h3 className="section-heading">🎓 Education</h3>
+              <h3 className="section-heading"><Icon name="gradcap" /> Education</h3>
               <div className="education-content-minimal">
                 <div className="education-left-bar"></div>
                 <div className="education-details-minimal">
@@ -37,7 +38,7 @@ const About = () => (
 
             {/* Clubs/Organizations Section */}
             <div className="organizations-section-minimal">
-              <h3 className="section-heading">🏢 Clubs / Organizations</h3>
+              <h3 className="section-heading"><Icon name="building" /> Clubs / Organizations</h3>
               <div className="organizations-content-minimal">
                 <div className="organizations-left-bar"></div>
                 <div className="organizations-list-minimal">
@@ -56,7 +57,7 @@ const About = () => (
 
             {/* Hobbies Section */}
             <div className="hobbies-section-minimal">
-              <h3 className="section-heading">🚀 Hobbies and Interests</h3>
+              <h3 className="section-heading"><Icon name="rocket" /> Hobbies and Interests</h3>
               <div className="hobbies-horizontal">
                 <div className="hobby-item-horizontal">
                   <img src={f1long} alt="Formula 1" />

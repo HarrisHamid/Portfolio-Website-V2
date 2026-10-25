@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "../App.css";
+import Icon from "./Icon";
 import blueprint from "../assets/Experience_Photos/blueprint.jpeg";
 import mitre from "../assets/Experience_Photos/MITRE.jpeg";
 import proof from "../assets/Experience_Photos/ProOF.jpeg";
@@ -147,8 +148,8 @@ const Experience = () => {
             <h3>{exp.title}</h3>
             <p className="company">{exp.company}</p>
             <p className="details">
-              🗓 {exp.years} <br />
-              📍 {exp.location} <br />
+              <Icon name="calendar" /> {exp.years} <br />
+              <Icon name="pin" /> {exp.location} <br />
             </p>
             <div className="tech-stack">
               {exp.stack.map((tech, i) => (
