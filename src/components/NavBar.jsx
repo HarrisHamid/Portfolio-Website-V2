@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaGithub, FaLinkedinIn, FaBars, FaTimes } from "react-icons/fa";
+import { goToDoor } from "./doorNav";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,6 +11,12 @@ const NavBar = () => {
 
   const closeMenu = () => {
     setIsOpen(false);
+  };
+
+  // Land on the door in front of a section rather than skipping past it
+  const handleNavClick = (e) => {
+    if (goToDoor(e.currentTarget.hash.slice(1))) e.preventDefault();
+    closeMenu();
   };
 
   return (
@@ -27,16 +34,16 @@ const NavBar = () => {
             <a href="#home">Home</a>
           </li>
           <li>
-            <a href="#about">About</a>
+            <a href="#about" onClick={handleNavClick}>About</a>
           </li>
           <li>
-            <a href="#experience">Experience</a>
+            <a href="#experience" onClick={handleNavClick}>Experience</a>
           </li>
           <li>
-            <a href="#skills">Skills</a>
+            <a href="#skills" onClick={handleNavClick}>Skills</a>
           </li>
           <li>
-            <a href="#projects">Projects</a>
+            <a href="#projects" onClick={handleNavClick}>Projects</a>
           </li>
         </ul>
       </div>
@@ -81,22 +88,22 @@ const NavBar = () => {
             </a>
           </li>
           <li>
-            <a href="#about" onClick={closeMenu}>
+            <a href="#about" onClick={handleNavClick}>
               About
             </a>
           </li>
           <li>
-            <a href="#experience" onClick={closeMenu}>
+            <a href="#experience" onClick={handleNavClick}>
               Experience
             </a>
           </li>
           <li>
-            <a href="#skills" onClick={closeMenu}>
+            <a href="#skills" onClick={handleNavClick}>
               Skills
             </a>
           </li>
           <li>
-            <a href="#projects" onClick={closeMenu}>
+            <a href="#projects" onClick={handleNavClick}>
               Projects
             </a>
           </li>

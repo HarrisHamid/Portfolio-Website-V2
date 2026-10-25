@@ -14,13 +14,13 @@ function App() {
     <div className="App">
       <NavBar />
       <Home />
-      <SectionDivider label="About Me" code="// entering about-me.sys" />
+      <SectionDivider section="about" label="About Me" code="// entering about-me.sys" />
       <About />
-      <SectionDivider label="Experience" code="// loading experience.log" />
+      <SectionDivider section="experience" label="Experience" code="// loading experience.log" />
       <Experience />
-      <SectionDivider label="Skills" code="// mounting skills.db" />
+      <SectionDivider section="skills" label="Skills" code="// mounting skills.db" />
       <Skill />
-      <SectionDivider label="Projects" code="// deploying projects.build" />
+      <SectionDivider section="projects" label="Projects" code="// deploying projects.build" />
       <Projects />
     </div>
   );
