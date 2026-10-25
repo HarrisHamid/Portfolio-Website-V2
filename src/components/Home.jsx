@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../../src/App.css";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import profilepicture from "../assets/profile.png";
-import PixelAnimation from "./PixelAnimation";
+import PerspectiveTunnelHero from "./PerspectiveTunnelHero";
 
 const Home = () => {
+  const pinRef = useRef(null);
   const [typedText, setTypedText] = useState("");
   const phrases = [
     "Developer",
@@ -46,22 +47,20 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="home" id="home">
-      <PixelAnimation />
-      <div className="home-content">
-        <h1>
-          <span className="highlight-red">Harris Hamid</span>
-        </h1>
+    <section className="home-pin-wrapper" id="home" ref={pinRef}>
+      <div className="home">
+        <PerspectiveTunnelHero scrollTargetRef={pinRef} />
+        <div className="home-content">
+          <div className="container-typewriter">
+            <h3 className="terminal-prompt">
+              <span className="prompt-arrow">&gt;</span>
+              I'm a <span id="typewriter">{typedText}</span>
+              <span id="cursor" className="terminal-cursor"></span>
+            </h3>
+          </div>
 
-        <div className="container-typewriter">
-          <h3 className="terminal-prompt">
-            <span className="prompt-arrow">&gt;</span>
-            I'm a <span id="typewriter">{typedText}</span>
-            <span id="cursor" className="terminal-cursor"></span>
-          </h3>
+          {/* <p>Pashion for Tech and Building</p> */}
         </div>
-
-        {/* <p>Pashion for Tech and Building</p> */}
       </div>
     </section>
   );
