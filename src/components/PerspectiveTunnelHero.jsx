@@ -8,7 +8,7 @@ import {
   useScroll,
 } from "framer-motion";
 import HerbariumBackground from "./HerbariumBackground";
-import homeBackground from "../assets/Landing_Photos/optimized/home-background.jpg";
+import homeBackground from "../assets/Landing_Photos/mask.jpeg";
 import habibitechSummit from "../assets/Landing_Photos/optimized/habibitech-summit.jpg";
 import graduation from "../assets/Landing_Photos/optimized/graduation.jpg";
 import hackathon from "../assets/Landing_Photos/optimized/hackathon.jpg";
@@ -107,7 +107,7 @@ function TunnelCard({ card, progress, pointer, total, stage }) {
       style={{ width: cardWidth, transform, opacity, zIndex: card.index + 1 }}
       className="pointer-events-auto absolute left-1/2 top-1/2 aspect-[4/5] will-change-transform select-none"
     >
-      <div className="group relative h-full w-full overflow-hidden rounded-2xl bg-[#101010] shadow-2xl shadow-black/80 ring-1 ring-white/10 transition-all duration-500 hover:ring-[#d8b46a]/70 hover:shadow-[#d8b46a]/20">
+      <div className="group relative h-full w-full overflow-hidden rounded-2xl bg-[#101010] shadow-2xl shadow-black/80 ring-1 ring-white/10 transition-all duration-500 hover:ring-[#ff6352]/70 hover:shadow-[#ff6352]/20">
         <img
           src={card.item.src}
           alt={card.item.title}

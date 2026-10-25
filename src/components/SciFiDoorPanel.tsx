@@ -43,7 +43,7 @@ const stretch = (inset: number, x2: number, y: number, h: number): CSSProperties
 
 /* ---------- themes ---------- */
 
-type Theme = "navy" | "brass";
+type Theme = "navy" | "brass" | "coral";
 
 /*
  * c0–c8: plate ramp, darkest → brightest.  k0–k4: charcoal for the clamp and
@@ -66,6 +66,14 @@ const THEMES: Record<Theme, Record<string, string>> = {
     "--amber": "#f0b94d", "--teal": "#8fd6c9",
     "--text": "#f8ecd0", "--glow": "#f0b94d", "--ember": "240 165 60",
   },
+  coral: {
+    "--c0": "#070a0b", "--c1": "#0f1619", "--c2": "#18232a", "--c3": "#23323a",
+    "--c4": "#34474e", "--c5": "#4f666d", "--c6": "#7a9196", "--c7": "#bfd0d1",
+    "--c8": "#eef4f3",
+    "--k0": "#050404", "--k1": "#0f0e0e", "--k2": "#1a1918", "--k3": "#2a2928", "--k4": "#4a4846",
+    "--amber": "#ff6352", "--teal": "#03aba3",
+    "--text": "#fff1ec", "--glow": "#ff6352", "--ember": "255 99 82",
+  },
 };
 
 const DERIVED: Record<string, string> = {
@@ -80,7 +88,7 @@ export interface SciFiDoorPanelProps {
   typewriter?: boolean;
   /** Milliseconds per character for the typewriter. */
   typeSpeed?: number;
-  /** Colour scheme: the original navy hull, or brass to match the site. */
+  /** Colour scheme: the original navy hull, brass, or coral/slate to match the site. */
   theme?: Theme;
   /** Tallest the panel gets, in px. Wider screens stretch the side bays. */
   maxHeight?: number;

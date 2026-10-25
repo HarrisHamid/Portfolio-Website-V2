@@ -6,7 +6,7 @@ export default function SectionDivider({ label, code }) {
     <div className="section-divider">
       <div className="shadow-[0_30px_70px_rgba(0,0,0,0.65)]">
         <SciFiDoorPanel
-          theme="brass"
+          theme="coral"
           message={label}
           serial={code}
           showToggle={false}

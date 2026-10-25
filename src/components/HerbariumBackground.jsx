@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
 
 const CELL_SIZE = 13;
-const TINT = { r: 216, g: 180, b: 106 };
-const TINT_OPACITY = 0.38;
+const TINT = { r: 255, g: 99, b: 82 };
+const TINT_OPACITY = 0.18;
 const CONTRAST = 1.15;
-const GRAYSCALE = 0.28;
+const GRAYSCALE = 0.1;
 const VIGNETTE_INTENSITY = 0.55;
 const BLOOM_INTENSITY = 0.45;
 const ANIM_SPEED = 1.0;
@@ -150,7 +150,7 @@ export default function HerbariumBackground({ src }) {
         Math.max(width, height) * 0.7
       );
       vignette.addColorStop(0, "rgba(0,0,0,0)");
-      vignette.addColorStop(1, `rgba(10,7,2,${VIGNETTE_INTENSITY})`);
+      vignette.addColorStop(1, `rgba(7,10,11,${VIGNETTE_INTENSITY})`);
       ctx.fillStyle = vignette;
       ctx.fillRect(0, 0, width, height);
 
