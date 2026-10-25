@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useMotionValue, useReducedMotion, useSpring } from "framer-motion";
 import SciFiDoorPanel from "./SciFiDoorPanel";
+import { VISIT_EVENT } from "./doorNav";
 
 const DOOR_SPRING = { stiffness: 140, damping: 26, restDelta: 0.0005 };
 /** Pixels of scroll input it takes to shut the doors. */
@@ -18,10 +19,10 @@ const clamp01 = (v) => Math.min(1, Math.max(0, v));
  * scrolls back up past fully open). Doors skipped over (nav links, scrollbar drag)
  * just latch shut.
  */
-function useDoorGate(ref, enabled) {
+function useDoorGate(ref, enabled, section) {
   const target = useMotionValue(0);
   const progress = useSpring(target, DOOR_SPRING);
-  // idle → engaged → holding → done
+  // idle → engaged → holding → done; "visiting" = a nav link is carrying the page to this door
   const gate = useRef({ mode: "idle", y: 0, lastInput: 0, holdTimer: 0 });
 
   const onLock = () => {
@@ -54,6 +55,7 @@ function useDoorGate(ref, enabled) {
     /** Feed `delta` px of scroll intent through the gate. Returns true if it was consumed. */
     const drive = (delta) => {
       g.lastInput = performance.now();
+      if (g.mode === "visiting") g.mode = "idle"; // user took over mid-flight
       if (g.mode === "done") return false;
       if (g.mode === "holding") return true;
 
@@ -106,9 +108,14 @@ function useDoorGate(ref, enabled) {
         if (Math.abs(window.scrollY - g.y) > 1) window.scrollTo({ top: g.y, behavior: "instant" });
         return;
       }
-      if (g.mode !== "idle") return;
       const r = rect();
       if (!r) return;
+      if (g.mode === "visiting") {
+        // don't latch shut while the nav scroll is still on its way; arm once it arrives
+        if (Math.abs(center(r) - mid()) <= 2) g.mode = "idle";
+        return;
+      }
+      if (g.mode !== "idle") return;
       if (r.bottom < 0) {
         // went past without stopping (nav link, scrollbar, reload mid-page): latch shut
         g.mode = "done";
@@ -123,13 +130,35 @@ function useDoorGate(ref, enabled) {
       }
     };
 
+    const onVisit = (e) => {
+      if (e.detail === section) {
+        // a locked door stays shut; an open one waits for the user to close it
+        if (g.mode !== "done") g.mode = "visiting";
+        return;
+      }
+      // another door is the destination: let go of the page if we're holding it
+      if (g.mode === "engaged") g.mode = "idle";
+      else if (g.mode === "holding") {
+        window.clearTimeout(g.holdTimer);
+        g.mode = "done";
+      }
+    };
+
+    const onScrollEnd = () => {
+      if (g.mode === "visiting") g.mode = "idle";
+    };
+
     onScroll();
+    window.addEventListener(VISIT_EVENT, onVisit);
+    window.addEventListener("scrollend", onScrollEnd);
     window.addEventListener("wheel", onWheel, { passive: false });
     window.addEventListener("touchstart", onTouchStart, { passive: true });
     window.addEventListener("touchmove", onTouchMove, { passive: false });
     window.addEventListener("keydown", onKey);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
+      window.removeEventListener(VISIT_EVENT, onVisit);
+      window.removeEventListener("scrollend", onScrollEnd);
       window.removeEventListener("wheel", onWheel);
       window.removeEventListener("touchstart", onTouchStart);
       window.removeEventListener("touchmove", onTouchMove);
@@ -137,19 +166,19 @@ function useDoorGate(ref, enabled) {
       window.removeEventListener("scroll", onScroll);
       window.clearTimeout(g.holdTimer);
     };
-  }, [enabled, ref, target]);
+  }, [enabled, ref, target, section]);
 
   return { progress, onLock };
 }
 
-export default function SectionDivider({ label, code }) {
+export default function SectionDivider({ label, code, section }) {
   const ref = useRef(null);
   const reduce = useReducedMotion();
-  const { progress, onLock } = useDoorGate(ref, !reduce);
+  const { progress, onLock } = useDoorGate(ref, !reduce, section);
 
   return (
     <div className="section-divider">
-      <div ref={ref} className="shadow-[0_30px_70px_rgba(0,0,0,0.65)]">
+      <div ref={ref} data-door-for={section} className="shadow-[0_30px_70px_rgba(0,0,0,0.65)]">
         <SciFiDoorPanel
           theme="coral"
           message={label}
