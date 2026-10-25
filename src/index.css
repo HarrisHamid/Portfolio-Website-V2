@@ -58,6 +58,30 @@
   }
 }
 
+/* SciFiDoorPanel: indicator LEDs stay dark until the doors lock, then fade up into their pulse.
+   The unlit shadow mirrors the lit one's shape (outset, outset, inset) so it interpolates. */
+.door-unlit .led {
+  animation: none;
+  filter: brightness(0.16) saturate(0.2);
+  box-shadow: 0 0 0 transparent, 0 0 0 transparent, inset 0 0.25cqh 0.4cqh rgba(0, 0, 0, 0.7);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .door-lit .led {
+    animation: led-power-on 700ms ease-out, signal-pulse 2.6s ease-in-out 700ms infinite;
+  }
+}
+
+@keyframes led-power-on {
+  from {
+    filter: brightness(0.16) saturate(0.2);
+    box-shadow: 0 0 0 transparent, 0 0 0 transparent, inset 0 0.25cqh 0.4cqh rgba(0, 0, 0, 0.7);
+  }
+  to {
+    filter: brightness(1.15) saturate(1);
+  }
+}
+
 html,
 body {
   margin: 0;

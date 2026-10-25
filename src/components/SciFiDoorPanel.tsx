@@ -5,6 +5,13 @@ import {
   useState,
   type CSSProperties,
 } from "react";
+import {
+  motion,
+  useMotionValue,
+  useMotionValueEvent,
+  useTransform,
+  type MotionValue,
+} from "framer-motion";
 
 /*
  * Geometry is authored in "ref px" against a panel 266.67 units tall, with the
@@ -93,6 +100,10 @@ const CLOSE_MS = 950;
 const CLAMP_MS = 160;
 /** Lock beat (thunk + smoke) before the screen powers on. */
 const LOCK_MS = 700;
+/** Indicator LEDs power on this long after the doors lock. */
+const LIGHTS_DELAY_MS = 600;
+/** Scroll-driven mode: default point of `progress` where the doors meet and lock. */
+const CLOSE_AT = 0.7;
 
 const prefersReducedMotion = () =>
   typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -121,6 +132,16 @@ export interface SciFiDoorPanelProps {
    * time the panel scrolls into view. Skipped under prefers-reduced-motion.
    */
   entrance?: boolean;
+  /**
+   * Scroll-driven entrance: 0–1 progress (e.g. from framer-motion `useScroll`). The doors
+   * close as it rises and lock at `closeAt`; once locked they stay shut. Replaces the
+   * in-view trigger when given.
+   */
+  progress?: MotionValue<number>;
+  /** Point of `progress` where the doors meet and lock. */
+  closeAt?: number;
+  /** Fires once, the moment the doors lock. */
+  onLock?: () => void;
   className?: string;
 }
 
@@ -135,12 +156,12 @@ const CHARCOAL_BAR =
   "shadow-[0_0.6cqh_1.1cqh_rgba(0,0,0,0.75),inset_0_-0.3cqh_0_var(--k0)]";
 
 const LED_TEAL =
-  "absolute rounded-[0.5cqh] bg-[linear-gradient(180deg,color-mix(in_srgb,var(--teal)_35%,white),var(--teal)_55%,color-mix(in_srgb,var(--teal)_70%,black))] " +
+  "led absolute rounded-[0.5cqh] bg-[linear-gradient(180deg,color-mix(in_srgb,var(--teal)_35%,white),var(--teal)_55%,color-mix(in_srgb,var(--teal)_70%,black))] " +
   "shadow-[0_0_8px_var(--teal),0_0_3cqh_color-mix(in_srgb,var(--teal)_55%,transparent),inset_0_0_0_0.25cqh_rgba(0,0,0,0.25)] " +
   "animate-signal-pulse motion-reduce:animate-none";
 
 const LED_AMBER =
-  "absolute rounded-[0.5cqh] bg-[linear-gradient(180deg,color-mix(in_srgb,var(--amber)_35%,white),var(--amber)_55%,color-mix(in_srgb,var(--amber)_65%,black))] " +
+  "led absolute rounded-[0.5cqh] bg-[linear-gradient(180deg,color-mix(in_srgb,var(--amber)_35%,white),var(--amber)_55%,color-mix(in_srgb,var(--amber)_65%,black))] " +
   "shadow-[0_0_8px_var(--amber),0_0_3cqh_color-mix(in_srgb,var(--amber)_55%,transparent),inset_0_0_0_0.25cqh_rgba(0,0,0,0.25)] " +
   "animate-signal-pulse motion-reduce:animate-none";
 
@@ -498,8 +519,8 @@ function Connector({ uid, side, locked }: { uid: string; side: string; locked: b
           <SvgScrew cx={82} cy={64} r={2.6} fill={screw} rot={30} />
         </svg>
 
-        {/* indicator on the clamp face: amber until locked */}
-        <span className={locked ? LED_TEAL : LED_AMBER} style={hb(203, 129, 8, 8)} />
+        {/* indicator on the clamp face */}
+        <span className={LED_TEAL} style={hb(203, 129, 8, 8)} />
       </div>
     </>
   );
@@ -766,6 +787,9 @@ export default function SciFiDoorPanel({
   hideMode = "fade",
   serial = "904 160 10 70N 706 1600 B9D9DFC8C8 B70CC 8D0F/",
   entrance = true,
+  progress,
+  closeAt = CLOSE_AT,
+  onLock,
   className = "",
 }: SciFiDoorPanelProps) {
   const [uiVisible, setUiVisible] = useState(true);
@@ -778,10 +802,43 @@ export default function SciFiDoorPanel({
   const typed = useTypewriter(message, typewriter, typeSpeed, phase === "on");
   const typing = typed < message.length;
 
-  // Play the close → lock → power-on sequence the first time the panel scrolls into view.
+  /* --- scroll-driven mode: doors track `progress`, then latch shut --- */
+  const fallback = useMotionValue(0);
+  const scroll = progress ?? fallback;
+  const latched = useMotionValue(phase === "open" ? 0 : 1);
+  const lockTimer = useRef<number | undefined>(undefined);
+
+  const lockDoors = () => {
+    if (latched.get() === 1) return;
+    latched.set(1);
+    onLock?.();
+    setPhase("locked");
+    setSmoking(true);
+    lockTimer.current = window.setTimeout(() => setPhase("on"), LOCK_MS);
+  };
+
+  useMotionValueEvent(scroll, "change", (v) => {
+    if (progress && v >= closeAt) lockDoors();
+  });
+
+  useEffect(() => {
+    // already scrolled past (e.g. reload mid-page)
+    if (progress && phase === "open" && progress.get() >= closeAt) lockDoors();
+    return () => window.clearTimeout(lockTimer.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  /** 0 = fully open, 1 = shut. Eased so the doors pick up speed into the slam. */
+  const shut = useTransform([scroll, latched], ([p, l]: number[]) =>
+    l ? 1 : Math.pow(Math.min(1, Math.max(0, p / closeAt)), 1.6),
+  );
+  const leftX = useTransform(shut, (s) => `translateX(${-(1 - s) * DOOR_OPEN}%)`);
+  const rightX = useTransform(shut, (s) => `translateX(${(1 - s) * DOOR_OPEN}%)`);
+
+  // Timed mode: play the close → lock → power-on sequence the first time the panel scrolls into view.
   useEffect(() => {
     const el = panelRef.current;
-    if (phase !== "open" || !el) return;
+    if (progress || phase !== "open" || !el) return;
     const timers: number[] = [];
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -810,14 +867,43 @@ export default function SciFiDoorPanel({
   const isOpen = phase === "open";
   const locked = phase === "locked" || phase === "on";
   const screenOn = phase === "on";
+
+  // LEDs stay dark until a beat after the doors connect
+  const [lit, setLit] = useState(locked);
+  useEffect(() => {
+    if (!locked || lit) return;
+    const t = window.setTimeout(() => setLit(true), LIGHTS_DELAY_MS);
+    return () => window.clearTimeout(t);
+  }, [locked, lit]);
   const hiddenState = hideMode === "fade" ? "opacity-30" : "opacity-0 pointer-events-none";
   const artProps = { message, typed, typing, serial, locked, screenOn };
 
-  const door = (side: "left" | "right") => ({
-    clipPath: side === "left" ? "inset(0 50% 0 0)" : "inset(0 0 0 50%)",
-    transform: isOpen ? `translateX(${side === "left" ? -DOOR_OPEN : DOOR_OPEN}%)` : "none",
-    transition: `transform ${CLOSE_MS}ms cubic-bezier(0.55, 0, 0.85, 0.3)`,
-  });
+  const door = (side: "left" | "right") => {
+    const art = <PanelArt uid={`${uid}${side === "left" ? "L" : "R"}`} {...artProps} />;
+    const clipPath = side === "left" ? "inset(0 50% 0 0)" : "inset(0 0 0 50%)";
+    if (progress) {
+      return (
+        <motion.div
+          className={`absolute inset-0 will-change-transform ${lit ? "door-lit" : "door-unlit"}`}
+          style={{ clipPath, transform: side === "left" ? leftX : rightX }}
+        >
+          {art}
+        </motion.div>
+      );
+    }
+    return (
+      <div
+        className={`absolute inset-0 will-change-transform ${lit ? "door-lit" : "door-unlit"}`}
+        style={{
+          clipPath,
+          transform: isOpen ? `translateX(${side === "left" ? -DOOR_OPEN : DOOR_OPEN}%)` : "none",
+          transition: `transform ${CLOSE_MS}ms cubic-bezier(0.55, 0, 0.85, 0.3)`,
+        }}
+      >
+        {art}
+      </div>
+    );
+  };
 
   return (
     <div className={`@container w-full ${className}`}>
@@ -845,12 +931,8 @@ export default function SciFiDoorPanel({
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[40%] bg-[radial-gradient(ellipse_45%_100%_at_50%_100%,rgb(var(--ember)/0.3),transparent_75%)]" />
 
             {/* ===== the two doors ===== */}
-            <div className="absolute inset-0 will-change-transform" style={door("left")}>
-              <PanelArt uid={`${uid}L`} {...artProps} />
-            </div>
-            <div className="absolute inset-0 will-change-transform" style={door("right")}>
-              <PanelArt uid={`${uid}R`} {...artProps} />
-            </div>
+            {door("left")}
+            {door("right")}
 
             {/* ===== seam flash on impact ===== */}
             <span
