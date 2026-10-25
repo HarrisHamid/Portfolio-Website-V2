@@ -7,6 +7,7 @@ import {
   useSpring,
   useScroll,
 } from "framer-motion";
+import PixelAnimation from "./PixelAnimation";
 import habibitechSummit from "../assets/Landing_Photos/optimized/habibitech-summit.jpg";
 import graduation from "../assets/Landing_Photos/optimized/graduation.jpg";
 import hackathon from "../assets/Landing_Photos/optimized/hackathon.jpg";
@@ -113,14 +114,6 @@ function TunnelCard({ card, progress, pointer, total, stage }) {
           style={{ objectPosition: card.item.objectPosition || "center" }}
           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent flex items-end p-4 sm:p-5">
-          <span
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
-            className="text-xs sm:text-sm tracking-widest uppercase text-white/95 drop-shadow-md"
-          >
-            {card.item.title}
-          </span>
-        </div>
       </div>
     </motion.div>
   );
@@ -160,8 +153,9 @@ export default function PerspectiveTunnelHero({ scrollTargetRef } = {}) {
       className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none"
       style={{ perspective: stage.isMobile ? "900px" : "1200px", transformStyle: "preserve-3d" }}
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#2a2a2a_1px,transparent_1px)] [background-size:28px_28px] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,#000_60%,transparent_100%)] opacity-60" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,234,255,0.12)_0%,transparent_70%)]" />
+      <div className="pointer-events-auto absolute inset-0">
+        <PixelAnimation />
+      </div>
 
       <div className="absolute inset-0 pointer-events-none" style={{ transformStyle: "preserve-3d" }}>
         {TUNNEL_CARDS.map((card, i) => (
