@@ -700,22 +700,6 @@ body {
   padding: 0;
 }
 
-.section-title-time {
-  text-align: center;
-}
-
-.section-title-time h2 {
-  padding-top: 33px;
-  font-size: 3em;
-  font-weight: 700;
-  background-image: linear-gradient(to right, #8a5a2f, #d8b46a, #8a5a2f);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  position: relative;
-  display: inline-block;
-}
-
 .timeline-container {
   position: relative;
   padding: 3rem 1rem;
@@ -1131,11 +1115,23 @@ body {
 /* Section divider plaque primitives (reused by the full-width divider bar) */
 .section-plaque-rivet {
   position: absolute;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
+  width: 7px;
+  height: 7px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   background: radial-gradient(circle at 35% 35%, #e8c988, #6b5433 70%);
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+}
+
+.section-plaque-rivet::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 40%;
+  height: 40%;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background: #140e07;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.9);
 }
 
 .section-plaque-rivet-tl {
@@ -1185,7 +1181,7 @@ body {
 .section-plaque-light {
   width: 7px;
   height: 7px;
-  border-radius: 50%;
+  border-radius: 1.5px;
 }
 
 .section-plaque-light-amber {
@@ -1198,6 +1194,19 @@ body {
   background: #6b5433;
 }
 
+.section-plaque-light-teal {
+  background: #8fd6c9;
+  box-shadow: 0 0 6px rgba(143, 214, 201, 0.9);
+  animation: plaque-pulse 2.2s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.section-plaque-light-red {
+  background: #d1573f;
+  box-shadow: 0 0 6px rgba(209, 87, 63, 0.9);
+  animation: plaque-blink 3.1s steps(1, end) infinite;
+}
+
 @keyframes plaque-pulse {
   0%,
   100% {
@@ -1208,13 +1217,48 @@ body {
   }
 }
 
+@keyframes plaque-blink {
+  0%,
+  88% {
+    opacity: 1;
+  }
+  92%,
+  100% {
+    opacity: 0.15;
+  }
+}
+
 /* Full-width section divider bar, cuts into the sections above/below it */
 .section-divider {
   position: relative;
   z-index: 20;
   width: 100%;
-  margin-top: -52px;
-  margin-bottom: -52px;
+  margin-top: -68px;
+  margin-bottom: -68px;
+  pointer-events: none;
+}
+
+.section-divider-frame {
+  position: relative;
+  padding: 14px 0;
+  background: linear-gradient(180deg, #241b10 0%, #140e08 50%, #0c0804 100%);
+  border-top: 1px solid rgba(216, 180, 106, 0.18);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.75);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.65);
+}
+
+.section-divider-frame::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -40px;
+  height: 90px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(240, 185, 77, 0.22),
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -1224,13 +1268,14 @@ body {
   align-items: center;
   justify-content: center;
   gap: 18px;
-  height: 104px;
-  padding: 0 24px;
-  background: linear-gradient(180deg, #4a3a26 0%, #2a2014 55%, #1a130b 100%);
+  height: 190px;
+  padding: 0 28px;
+  background: linear-gradient(180deg, #4a3a26 0%, #342817 45%, #1a130b 100%);
   border-top: 1px solid rgba(216, 180, 106, 0.4);
   border-bottom: 1px solid rgba(0, 0, 0, 0.6);
   box-shadow: 0 1px 0 rgba(255, 237, 200, 0.25) inset,
-    0 -10px 24px rgba(0, 0, 0, 0.55) inset, 0 24px 60px rgba(0, 0, 0, 0.6);
+    0 -14px 30px rgba(0, 0, 0, 0.55) inset, 0 24px 60px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
 }
 
 .section-divider-bar::before {
@@ -1248,39 +1293,118 @@ body {
   );
 }
 
+.section-divider-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0,
+    transparent 37px,
+    rgba(0, 0, 0, 0.35) 38px,
+    rgba(255, 237, 200, 0.08) 39px,
+    transparent 40px
+  );
+  pointer-events: none;
+}
+
 .section-divider-flange {
   position: relative;
   flex-shrink: 0;
-  width: 84px;
-  height: 56px;
-  border-radius: 10px;
+  width: 110px;
+  height: 132px;
+  border-radius: 12px;
   background: linear-gradient(180deg, #3a2d1d, #1c150c);
   border: 1px solid rgba(216, 180, 106, 0.25);
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.65), inset 0 2px 0 rgba(255, 237, 200, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-divider-vents {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 64px;
+}
+
+.section-divider-slat {
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(10, 7, 3, 0.9), rgba(10, 7, 3, 0.9));
+  box-shadow: 0 1px 0 rgba(255, 237, 200, 0.12), 0 0 4px rgba(216, 180, 106, 0.25);
+}
+
+.section-divider-slat:nth-child(odd) {
+  width: 100%;
+}
+
+.section-divider-slat:nth-child(even) {
+  width: 78%;
 }
 
 .section-divider-track {
   position: relative;
   flex: 1;
-  max-width: 560px;
-  padding: 4px;
+  max-width: 580px;
+  padding: 6px;
   border-radius: 999px;
   background: linear-gradient(180deg, #2a2014, #140e08);
   border: 1px solid rgba(216, 180, 106, 0.3);
+  box-shadow: inset 0 1px 0 rgba(255, 237, 200, 0.1);
 }
 
 .section-divider-display {
   background: #0d0906;
   border: 1px solid rgba(216, 180, 106, 0.35);
   border-radius: 999px;
-  padding: 10px 28px;
+  padding: 6px;
   box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.85);
+}
+
+.section-divider-display-inner {
+  position: relative;
+  border: 1px solid rgba(216, 180, 106, 0.22);
+  border-radius: 999px;
+  padding: 14px 32px;
   text-align: center;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9), inset 0 0 2px rgba(216, 180, 106, 0.3);
+}
+
+.section-divider-display-inner::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 16px 3px rgba(255, 255, 255, 0.85),
+    0 0 38px 10px rgba(255, 255, 255, 0.45),
+    0 0 60px 16px rgba(255, 255, 255, 0.2);
+  opacity: 0.85;
+  pointer-events: none;
+  animation: divider-beam-pulse 2.6s ease-in-out infinite;
+}
+
+@keyframes divider-beam-pulse {
+  0%,
+  100% {
+    opacity: 0.65;
+    box-shadow: 0 0 12px 2px rgba(255, 255, 255, 0.65),
+      0 0 28px 7px rgba(255, 255, 255, 0.3),
+      0 0 44px 12px rgba(255, 255, 255, 0.12);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 20px 4px rgba(255, 255, 255, 1),
+      0 0 46px 12px rgba(255, 255, 255, 0.55),
+      0 0 72px 20px rgba(255, 255, 255, 0.25);
+  }
 }
 
 .section-divider-text {
   font-family: "JetBrains Mono", monospace;
-  font-size: 1rem;
+  font-size: 1.1rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: #e8c988;
@@ -1296,9 +1420,9 @@ body {
 
 .section-divider-strip {
   position: absolute;
-  left: 24px;
-  right: 24px;
-  bottom: 8px;
+  left: 28px;
+  right: 28px;
+  bottom: 12px;
   display: flex;
   justify-content: space-between;
   font-family: "JetBrains Mono", monospace;
@@ -1317,20 +1441,103 @@ body {
   }
 }
 
+/* Scattered bolts across the bar surface, echoing the reference panel's greebling */
+.section-plaque-rivet-mt1 {
+  top: 10px;
+  left: 22%;
+}
+
+.section-plaque-rivet-mt2 {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-plaque-rivet-mt3 {
+  top: 10px;
+  right: 22%;
+}
+
+.section-plaque-rivet-mb1 {
+  bottom: 24px;
+  left: 16%;
+}
+
+.section-plaque-rivet-mb2 {
+  bottom: 24px;
+  right: 16%;
+}
+
+.section-plaque-rivet-mb3 {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-plaque-rivet-mt4 {
+  top: 10px;
+  left: 8%;
+}
+
+.section-plaque-rivet-mt5 {
+  top: 10px;
+  right: 8%;
+}
+
+.section-plaque-rivet-mb4 {
+  bottom: 24px;
+  left: 6%;
+}
+
+.section-plaque-rivet-mb5 {
+  bottom: 24px;
+  right: 6%;
+}
+
+.section-plaque-rivet-track-tl {
+  top: -3px;
+  left: 16px;
+}
+
+.section-plaque-rivet-track-tr {
+  top: -3px;
+  right: 16px;
+}
+
+.section-plaque-rivet-track-bl {
+  bottom: -3px;
+  left: 16px;
+}
+
+.section-plaque-rivet-track-br {
+  bottom: -3px;
+  right: 16px;
+}
+
 @media (max-width: 640px) {
+  .section-divider {
+    margin-top: -44px;
+    margin-bottom: -44px;
+  }
+
   .section-divider-bar {
-    height: 84px;
+    height: 124px;
     gap: 10px;
     padding: 0 14px;
   }
 
   .section-divider-flange {
-    width: 48px;
-    height: 44px;
+    width: 54px;
+    height: 84px;
   }
 
-  .section-divider-display {
-    padding: 8px 16px;
+  .section-divider-vents {
+    width: 32px;
+    gap: 3px;
+  }
+
+  .section-divider-display-inner {
+    padding: 10px 16px;
   }
 
   .section-divider-text {
@@ -1341,5 +1548,20 @@ body {
   .section-divider-strip {
     left: 14px;
     right: 14px;
+  }
+
+  .section-plaque-rivet-mt1,
+  .section-plaque-rivet-mt3,
+  .section-plaque-rivet-mt4,
+  .section-plaque-rivet-mt5,
+  .section-plaque-rivet-mb1,
+  .section-plaque-rivet-mb2,
+  .section-plaque-rivet-mb4,
+  .section-plaque-rivet-mb5,
+  .section-plaque-rivet-track-tl,
+  .section-plaque-rivet-track-tr,
+  .section-plaque-rivet-track-bl,
+  .section-plaque-rivet-track-br {
+    display: none;
   }
 }
