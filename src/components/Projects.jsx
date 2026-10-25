@@ -3,9 +3,7 @@ import "../App.css";
 import Micromobile from "../assets/Project_Images/Micromobile.png";
 import PantryTracker from "../assets/Project_Images/PantryTracker.png";
 import capfinity from "../assets/Project_Images/capfinity.png";
-import PolyGlot from "../assets/Project_Images/polyglot.png";
 import triva from "../assets/Project_Images/Trivia.png";
-import toptech from "../assets/Project_Images/toptech.png";
 import local from "../assets/Project_Images/local.svg";
 
 const ProjectCard = ({
@@ -93,36 +91,12 @@ const ProjectsShowcase = () => {
       imageType: "logo",
     },
     {
-      title: "PolyGlot - HackPrinceton",
-      description:
-        "Full-Stack interactive language learning tool that helps you learn Cherokee through short bilingual texts, authentic audio, and instant word translation",
-      technologies: ["React", "JavaScript", "FastAPI", "MongoDB", "Python"],
-      image: PolyGlot,
-      imageType: "logo",
-    },
-    {
       title: "TriviaNight",
       description:
         "Collaborative terminal run trivia game with real-time updates and multi-client support",
       technologies: ["C", "Socket Programming", "TCP/IP"],
       image: triva,
       imageType: "logo",
-    },
-    {
-      title: "TopTechChats",
-      description:
-        "Full-Stack AI chatbot and news aggregator for top 10 tech companies",
-      technologies: [
-        "React",
-        "TypeScript",
-        "Gemini API",
-        "Next.js",
-        "Tailwind CSS",
-        "Shadcn",
-        "Alpha Vantage API",
-      ],
-      image: toptech,
-      imageType: "banner",
     },
   ];
 
