@@ -99,7 +99,7 @@ const PixelAnimation = () => {
       retina_detect: true,
       background: {
         color: {
-          value: "#1a1a1a",
+          value: "transparent",
         },
       },
     };

@@ -7,7 +7,8 @@ import {
   useSpring,
   useScroll,
 } from "framer-motion";
-import PixelAnimation from "./PixelAnimation";
+import HerbariumBackground from "./HerbariumBackground";
+import homeBackground from "../assets/Landing_Photos/optimized/home-background.jpg";
 import habibitechSummit from "../assets/Landing_Photos/optimized/habibitech-summit.jpg";
 import graduation from "../assets/Landing_Photos/optimized/graduation.jpg";
 import hackathon from "../assets/Landing_Photos/optimized/hackathon.jpg";
@@ -106,7 +107,7 @@ function TunnelCard({ card, progress, pointer, total, stage }) {
       style={{ width: cardWidth, transform, opacity, zIndex: card.index + 1 }}
       className="pointer-events-auto absolute left-1/2 top-1/2 aspect-[4/5] will-change-transform select-none"
     >
-      <div className="group relative h-full w-full overflow-hidden rounded-2xl bg-[#101010] shadow-2xl shadow-black/80 ring-1 ring-white/10 transition-all duration-500 hover:ring-[#00eaff]/70 hover:shadow-[#00eaff]/20">
+      <div className="group relative h-full w-full overflow-hidden rounded-2xl bg-[#101010] shadow-2xl shadow-black/80 ring-1 ring-white/10 transition-all duration-500 hover:ring-[#d8b46a]/70 hover:shadow-[#d8b46a]/20">
         <img
           src={card.item.src}
           alt={card.item.title}
@@ -153,8 +154,8 @@ export default function PerspectiveTunnelHero({ scrollTargetRef } = {}) {
       className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none"
       style={{ perspective: stage.isMobile ? "900px" : "1200px", transformStyle: "preserve-3d" }}
     >
-      <div className="pointer-events-auto absolute inset-0">
-        <PixelAnimation />
+      <div className="pointer-events-none absolute inset-0">
+        <HerbariumBackground src={homeBackground} />
       </div>
 
       <div className="absolute inset-0 pointer-events-none" style={{ transformStyle: "preserve-3d" }}>
