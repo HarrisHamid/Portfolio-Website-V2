@@ -17,6 +17,9 @@
   --animate-signal-pulse: signal-pulse 2.6s ease-in-out infinite;
   --animate-screen-flicker: screen-flicker 7s linear infinite;
   --animate-caret-blink: caret-blink 1s steps(1) infinite;
+  --animate-door-thunk: door-thunk 280ms ease-out;
+  --animate-seam-flash: seam-flash 520ms ease-out forwards;
+  --animate-screen-boot: screen-boot 360ms steps(1) forwards;
 
   @keyframes signal-pulse {
     0%, 100% { opacity: 1; filter: brightness(1.15); }
@@ -34,6 +37,24 @@
   @keyframes caret-blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
+  }
+  @keyframes door-thunk {
+    0% { transform: translate3d(0, 0, 0); }
+    25% { transform: translate3d(0, 0.9cqh, 0); }
+    55% { transform: translate3d(0, -0.45cqh, 0); }
+    80% { transform: translate3d(0, 0.2cqh, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+  }
+  @keyframes seam-flash {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  @keyframes screen-boot {
+    0% { opacity: 0.6; }
+    20% { opacity: 0; }
+    40% { opacity: 0.85; }
+    55% { opacity: 0.15; }
+    70%, 100% { opacity: 1; }
   }
 }
 

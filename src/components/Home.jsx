@@ -9,9 +9,9 @@ const Home = () => {
   const [typedText, setTypedText] = useState("");
   const phrases = [
     "Developer",
-    "CS Major",
+    "CS Grad",
     "Martial Artist",
-    "Tech Enthusiast",
+    "Tech Bro",
     "Life Long Learner",
   ];
   const sleepTime = 100;
