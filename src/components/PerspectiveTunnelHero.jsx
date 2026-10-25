@@ -7,13 +7,32 @@ import {
   useSpring,
   useScroll,
 } from "framer-motion";
+import habibitechSummit from "../assets/Landing_Photos/optimized/habibitech-summit.jpg";
+import graduation from "../assets/Landing_Photos/optimized/graduation.jpg";
+import hackathon from "../assets/Landing_Photos/optimized/hackathon.jpg";
+import localsentinelDemo from "../assets/Landing_Photos/optimized/localsentinel-demo.jpg";
+import marketCooked from "../assets/Landing_Photos/optimized/market-cooked.jpg";
+import ocpGlobalSummit from "../assets/Landing_Photos/optimized/ocp-global-summit.jpg";
+import awsSummit from "../assets/Landing_Photos/optimized/aws-summit.jpg";
+import awsExpo from "../assets/Landing_Photos/optimized/aws-expo.jpg";
+import panelDiscussion from "../assets/Landing_Photos/optimized/panel-discussion.jpg";
+import ocpSummitPanel from "../assets/Landing_Photos/optimized/ocp-summit-panel.jpg";
+import goldenGateBridge from "../assets/Landing_Photos/optimized/golden-gate-bridge.jpg";
+import nomadFuturist from "../assets/Landing_Photos/optimized/nomad-futurist.jpg";
+
 const IMAGES = [
-  { src: "https://picsum.photos/seed/micromobile-hamid/480/600", title: "MicroMobile" },
-  { src: "https://picsum.photos/seed/pantrytracker-hamid/480/600", title: "PantryTracker" },
-  { src: "https://picsum.photos/seed/capfinity-hamid/480/600", title: "Capfinity" },
-  { src: "https://picsum.photos/seed/polyglot-hamid/480/600", title: "PolyGlot" },
-  { src: "https://picsum.photos/seed/trivianight-hamid/480/600", title: "TriviaNight" },
-  { src: "https://picsum.photos/seed/toptechchats-hamid/480/600", title: "TopTechChats" },
+  { src: habibitechSummit, title: "HabibiTech Summit" },
+  { src: graduation, title: "Graduation" },
+  { src: hackathon, title: "Hackathon" },
+  { src: localsentinelDemo, title: "LocalSentinel Demo" },
+  { src: marketCooked, title: "Is the Market Cooked?" },
+  { src: ocpGlobalSummit, title: "OCP Global Summit" },
+  { src: awsSummit, title: "AWS Summit" },
+  { src: awsExpo, title: "AWS Expo" },
+  { src: panelDiscussion, title: "Panel Discussion" },
+  { src: ocpSummitPanel, title: "OCP Summit Panel", objectPosition: "15% 30%" },
+  { src: goldenGateBridge, title: "Golden Gate Bridge" },
+  { src: nomadFuturist, title: "Nomad Futurist" },
 ];
 
 const TUNNEL_CARDS = IMAGES.map((item, i) => {
@@ -82,16 +101,16 @@ function TunnelCard({ card, progress, pointer, total, stage }) {
   });
 
   return (
-    <motion.a
-      href="#projects"
+    <motion.div
       style={{ width: cardWidth, transform, opacity, zIndex: card.index + 1 }}
-      className="pointer-events-auto absolute left-1/2 top-1/2 aspect-[4/5] will-change-transform select-none cursor-pointer block"
+      className="pointer-events-auto absolute left-1/2 top-1/2 aspect-[4/5] will-change-transform select-none"
     >
       <div className="group relative h-full w-full overflow-hidden rounded-2xl bg-[#101010] shadow-2xl shadow-black/80 ring-1 ring-white/10 transition-all duration-500 hover:ring-[#00eaff]/70 hover:shadow-[#00eaff]/20">
         <img
           src={card.item.src}
           alt={card.item.title}
           draggable={false}
+          style={{ objectPosition: card.item.objectPosition || "center" }}
           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent flex items-end p-4 sm:p-5">
@@ -103,7 +122,7 @@ function TunnelCard({ card, progress, pointer, total, stage }) {
           </span>
         </div>
       </div>
-    </motion.a>
+    </motion.div>
   );
 }
 
@@ -143,9 +162,6 @@ export default function PerspectiveTunnelHero({ scrollTargetRef } = {}) {
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#2a2a2a_1px,transparent_1px)] [background-size:28px_28px] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,#000_60%,transparent_100%)] opacity-60" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,234,255,0.12)_0%,transparent_70%)]" />
-
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[48vmin] w-[48vmin] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#00eaff]/15" />
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[76vmin] w-[76vmin] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/10" />
 
       <div className="absolute inset-0 pointer-events-none" style={{ transformStyle: "preserve-3d" }}>
         {TUNNEL_CARDS.map((card, i) => (
