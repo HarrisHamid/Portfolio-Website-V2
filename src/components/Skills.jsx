@@ -127,12 +127,6 @@ export default function Skill() {
   return (
     <section className="skill-section" id="skills">
       <div className="container">
-        <div className="section-title">
-          <h2>
-            <span></span>Skills<span></span>
-          </h2>
-        </div>
-
         <div className="skills-grid">
           <div className="skill-category">
             <h3 className="category-title">Languages</h3>

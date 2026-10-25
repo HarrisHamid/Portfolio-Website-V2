@@ -33,13 +33,13 @@ html {
 body {
   margin: 0;
   font-family: "Anta", sans-serif;
-  background-color: #1a1a1a;
+  background-color: #111719;
   color: #fff;
   overflow-x: hidden;
 }
 
 .home-content h1 .highlight-red {
-  background-image: linear-gradient(to right, #2a48aa, #00eaff, #2a48aa);
+  background-image: linear-gradient(to right, #c43d30, #ff6352, #c43d30);
   -webkit-background-clip: text; /* For Webkit browsers (Chrome, Safari) */
   background-clip: text;
   color: transparent;
@@ -89,7 +89,7 @@ body {
   margin: 0 auto;
   padding: 0.85rem 1.5rem;
   background: rgba(13, 13, 13, 0.55);
-  border: 1px solid rgba(0, 234, 255, 0.25);
+  border: 1px solid rgba(255, 99, 82, 0.25);
   border-radius: 8px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
 }
@@ -107,7 +107,7 @@ body {
 }
 
 .prompt-arrow {
-  color: #00eaff;
+  color: #03aba3;
   font-weight: 700;
 }
 
@@ -121,7 +121,7 @@ body {
   width: 0.55em;
   height: 1.35rem;
   margin-left: 2px;
-  background-color: #00eaff;
+  background-color: #ff6352;
   animation: terminal-blink 1s steps(1, jump-none) infinite;
 }
 
@@ -197,7 +197,7 @@ body {
   left: -10px;
   opacity: 0;
   transition: all 0.3s ease;
-  color: #00eaff;
+  color: #ff6352;
 }
 .navbar-center .navbar-links li a::after {
   content: "]";
@@ -205,7 +205,7 @@ body {
   right: -10px;
   opacity: 0;
   transition: all 0.3s ease;
-  color: #00eaff;
+  color: #ff6352;
 }
 
 /* On hover, move the brackets into position and make them visible */
@@ -236,7 +236,7 @@ body {
 }
 
 .navbar-icon:hover {
-  color: #00eaff;
+  color: #ff6352;
 }
 
 /* Hamburger Menu Button */
@@ -251,7 +251,7 @@ body {
 }
 
 .hamburger-menu:hover {
-  color: #00eaff;
+  color: #ff6352;
 }
 
 /* Mobile Menu */
@@ -299,7 +299,7 @@ body {
 }
 
 .mobile-links li a:hover {
-  color: #00eaff;
+  color: #ff6352;
 }
 
 .mobile-links li:last-child a {
@@ -351,7 +351,7 @@ body {
 /* About Me Section */
 .about-section {
   padding: 140px 0;
-  background-color: #0c0a0a;
+  background-color: #0b1012;
 }
 
 .container {
@@ -369,7 +369,7 @@ body {
   padding-top: 15px;
   font-size: 3em;
   font-weight: 700;
-  background-image: linear-gradient(to right, #2a48aa, #00eaff, #2a48aa);
+  background-image: linear-gradient(to right, #c43d30, #ff6352, #c43d30);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -440,8 +440,8 @@ body {
 .headshot:hover {
   transform: scale(1.03);
   transition: transform 0.3s ease-in-out;
-  box-shadow: 0 10px 30px rgba(9, 153, 215, 0.714);
-  border-color: #051213;
+  box-shadow: 0 10px 30px rgba(255, 99, 82, 0.714);
+  border-color: #11191c;
 }
 
 /* Minimalist About Section Styles */
@@ -459,15 +459,15 @@ body {
 
 .about-info-paragraph-minimal:hover {
   transform: translateY(-5px);
-  border-color: rgba(53, 191, 204, 0.95);
-  box-shadow: 0 8px 16px rgba(0, 234, 255, 0.1);
+  border-color: rgba(255, 99, 82, 0.95);
+  box-shadow: 0 8px 16px rgba(255, 99, 82, 0.1);
 }
 
 /* Section Headings */
 .section-heading {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #87ceeb;
+  color: #ff6352;
   margin-bottom: 20px;
   margin-top: 30px;
 }
@@ -491,7 +491,7 @@ body {
   width: 4px;
   height: auto;
   min-height: 105px;
-  background: linear-gradient(to bottom, #2a48aa, #00eaff);
+  background: linear-gradient(to bottom, #c43d30, #ff6352);
   border-radius: 2px;
   flex-shrink: 0;
 }
@@ -510,7 +510,7 @@ body {
 
 .university-name {
   font-size: 1.1rem;
-  color: #87ceeb;
+  color: #ff6352;
   margin: 0 0 5px 0;
   font-weight: 500;
 }
@@ -549,7 +549,7 @@ body {
   width: 4px;
   height: auto;
   min-height: 90px;
-  background: linear-gradient(to bottom, #2a48aa, #00eaff);
+  background: linear-gradient(to bottom, #c43d30, #ff6352);
   border-radius: 2px;
   flex-shrink: 0;
 }
@@ -693,27 +693,11 @@ body {
 
 /* Timeline Section */
 body {
-  background: #0d0d0d;
+  background: #0e1416;
   color: white;
   font-family: "JetBrains Mono", monospace;
   margin: 0;
   padding: 0;
-}
-
-.section-title-time {
-  text-align: center;
-}
-
-.section-title-time h2 {
-  padding-top: 33px;
-  font-size: 3em;
-  font-weight: 700;
-  background-image: linear-gradient(to right, #2a48aa, #00eaff, #2a48aa);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  position: relative;
-  display: inline-block;
 }
 
 .timeline-container {
@@ -737,7 +721,7 @@ body {
   left: 50%;
   width: 2px;
   height: 91%;
-  background: linear-gradient(to bottom, #00eaff, #2a48aa);
+  background: linear-gradient(to bottom, #ff6352, #03aba3);
   transform: translateX(-50%);
   z-index: 1;
 }
@@ -767,7 +751,7 @@ body {
 }
 
 .company {
-  color: #00eaff;
+  color: #2fd3c8;
   font-weight: bold;
   margin: 0.5rem 0;
 }
@@ -785,12 +769,12 @@ body {
 }
 
 .pill {
-  background: #00283e;
+  background: #0a2826;
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
   font-size: 0.8rem;
-  color: #00eaff;
-  border: 1px solid #00eaff;
+  color: #2fd3c8;
+  border: 1px solid #03aba3;
 }
 
 .glow-dot {
@@ -798,8 +782,8 @@ body {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #00ffff;
-  box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+  background: #ff6352;
+  box-shadow: 0 0 10px #ff6352, 0 0 20px #ff6352, 0 0 30px #ff6352;
   z-index: 3;
 }
 
@@ -832,7 +816,7 @@ body {
 /* Skills */
 .skill-section {
   padding: 140px 0;
-  background-color: #0c0a0a;
+  background-color: #0b1012;
 }
 
 .skills-grid {
@@ -854,15 +838,15 @@ body {
 
 .skill-category:hover {
   transform: translateY(-5px);
-  border-color: rgba(53, 191, 204, 0.3);
-  box-shadow: 0 20px 40px rgba(0, 234, 255, 0.1);
+  border-color: rgba(255, 99, 82, 0.3);
+  box-shadow: 0 20px 40px rgba(255, 99, 82, 0.1);
 }
 
 .category-title {
   text-align: center;
   font-size: 1.8rem;
   font-weight: 600;
-  color: #87ceeb;
+  color: #ff6352;
   margin-bottom: 30px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -895,8 +879,8 @@ body {
 .skill-card:hover {
   transform: translateY(-8px) scale(1.05);
   background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(0, 234, 255, 0.4);
-  box-shadow: 0 15px 35px rgba(0, 234, 255, 0.2);
+  border-color: rgba(255, 99, 82, 0.4);
+  box-shadow: 0 15px 35px rgba(255, 99, 82, 0.2);
 }
 
 .skill-icon-container {
@@ -1078,16 +1062,16 @@ body {
 }
 
 .tech-tag {
-  background: #00283e;
+  background: #0a2826;
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
   font-size: 0.8rem;
-  color: #00eaff;
-  border: 1px solid #00eaff;
+  color: #2fd3c8;
+  border: 1px solid #03aba3;
 }
 
 .tech-tag:hover {
-  background: #020943;
+  background: #0f3a38;
   transform: scale(1.05);
 }
 
@@ -1097,8 +1081,8 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   padding: 20px;
-  background: #021f3d;
-  background: linear-gradient(135deg, #6a6d6d 0%, #021f3d 50%, #5b8d9a 100%);
+  background: #0f1619;
+  background: linear-gradient(135deg, #16524e 0%, #0f1619 50%, #a3372c 100%);
   min-height: 100vh;
 }
 
@@ -1126,4 +1110,458 @@ body {
   /* .timeline-line {
     display: none;
   } */
+}
+
+/* Section divider plaque primitives (reused by the full-width divider bar) */
+.section-plaque-rivet {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background: radial-gradient(circle at 35% 35%, #ffb3a6, #2e3d42 70%);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+}
+
+.section-plaque-rivet::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 40%;
+  height: 40%;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background: #070a0b;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.9);
+}
+
+.section-plaque-rivet-tl {
+  top: 7px;
+  left: 10px;
+}
+
+.section-plaque-rivet-tr {
+  top: 7px;
+  right: 10px;
+}
+
+.section-plaque-rivet-bl {
+  bottom: 7px;
+  left: 10px;
+}
+
+.section-plaque-rivet-br {
+  bottom: 7px;
+  right: 10px;
+}
+
+.section-plaque-display {
+  background: #070a0b;
+  border: 1px solid rgba(255, 99, 82, 0.3);
+  border-radius: 999px;
+  padding: 8px 26px;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.8);
+}
+
+.section-plaque-text {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.95rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #ffb3a6;
+  text-shadow: 0 0 8px rgba(255, 99, 82, 0.65), 0 0 2px rgba(255, 99, 82, 0.9);
+}
+
+.section-plaque-lights {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-right: 2px;
+}
+
+.section-plaque-light {
+  width: 7px;
+  height: 7px;
+  border-radius: 1.5px;
+}
+
+.section-plaque-light-amber {
+  background: #ff6352;
+  box-shadow: 0 0 6px rgba(255, 99, 82, 0.9);
+  animation: plaque-pulse 1.6s ease-in-out infinite;
+}
+
+.section-plaque-light-dim {
+  background: #2e3d42;
+}
+
+.section-plaque-light-teal {
+  background: #03aba3;
+  box-shadow: 0 0 6px rgba(3, 171, 163, 0.9);
+  animation: plaque-pulse 2.2s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.section-plaque-light-red {
+  background: #d1573f;
+  box-shadow: 0 0 6px rgba(209, 87, 63, 0.9);
+  animation: plaque-blink 3.1s steps(1, end) infinite;
+}
+
+@keyframes plaque-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@keyframes plaque-blink {
+  0%,
+  88% {
+    opacity: 1;
+  }
+  92%,
+  100% {
+    opacity: 0.15;
+  }
+}
+
+/* Full-width section divider bar, cuts into the sections above/below it */
+.section-divider {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  margin-top: -68px;
+  margin-bottom: 4rem;
+  pointer-events: none;
+}
+
+.section-divider-frame {
+  position: relative;
+  padding: 14px 0;
+  background: linear-gradient(180deg, #18232a 0%, #0f1619 50%, #070a0b 100%);
+  border-top: 1px solid rgba(255, 99, 82, 0.18);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.75);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.65);
+}
+
+.section-divider-frame::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -40px;
+  height: 90px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 99, 82, 0.22),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.section-divider-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  height: 190px;
+  padding: 0 28px;
+  background: linear-gradient(180deg, #2e3d42 0%, #23323a 45%, #11191c 100%);
+  border-top: 1px solid rgba(255, 99, 82, 0.4);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+  box-shadow: 0 1px 0 rgba(220, 240, 238, 0.25) inset,
+    0 -14px 30px rgba(0, 0, 0, 0.55) inset, 0 24px 60px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.section-divider-bar::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 80px;
+  right: 80px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(220, 240, 238, 0.7),
+    transparent
+  );
+}
+
+.section-divider-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0,
+    transparent 37px,
+    rgba(0, 0, 0, 0.35) 38px,
+    rgba(220, 240, 238, 0.08) 39px,
+    transparent 40px
+  );
+  pointer-events: none;
+}
+
+.section-divider-flange {
+  position: relative;
+  flex-shrink: 0;
+  width: 110px;
+  height: 132px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #23323a, #11191c);
+  border: 1px solid rgba(255, 99, 82, 0.25);
+  box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.65), inset 0 2px 0 rgba(220, 240, 238, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-divider-vents {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 64px;
+}
+
+.section-divider-slat {
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(7, 10, 11, 0.9), rgba(7, 10, 11, 0.9));
+  box-shadow: 0 1px 0 rgba(220, 240, 238, 0.12), 0 0 4px rgba(255, 99, 82, 0.25);
+}
+
+.section-divider-slat:nth-child(odd) {
+  width: 100%;
+}
+
+.section-divider-slat:nth-child(even) {
+  width: 78%;
+}
+
+.section-divider-track {
+  position: relative;
+  flex: 1;
+  max-width: 580px;
+  padding: 6px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #18232a, #0f1619);
+  border: 1px solid rgba(255, 99, 82, 0.3);
+  box-shadow: inset 0 1px 0 rgba(220, 240, 238, 0.1);
+}
+
+.section-divider-display {
+  background: #070a0b;
+  border: 1px solid rgba(255, 99, 82, 0.35);
+  border-radius: 999px;
+  padding: 6px;
+  box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.85);
+}
+
+.section-divider-display-inner {
+  position: relative;
+  border: 1px solid rgba(255, 99, 82, 0.22);
+  border-radius: 999px;
+  padding: 14px 32px;
+  text-align: center;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9), inset 0 0 2px rgba(255, 99, 82, 0.3);
+}
+
+.section-divider-display-inner::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 16px 3px rgba(255, 255, 255, 0.85),
+    0 0 38px 10px rgba(255, 255, 255, 0.45),
+    0 0 60px 16px rgba(255, 255, 255, 0.2);
+  opacity: 0.85;
+  pointer-events: none;
+  animation: divider-beam-pulse 2.6s ease-in-out infinite;
+}
+
+@keyframes divider-beam-pulse {
+  0%,
+  100% {
+    opacity: 0.65;
+    box-shadow: 0 0 12px 2px rgba(255, 255, 255, 0.65),
+      0 0 28px 7px rgba(255, 255, 255, 0.3),
+      0 0 44px 12px rgba(255, 255, 255, 0.12);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 20px 4px rgba(255, 255, 255, 1),
+      0 0 46px 12px rgba(255, 255, 255, 0.55),
+      0 0 72px 20px rgba(255, 255, 255, 0.25);
+  }
+}
+
+.section-divider-text {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.1rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #ffb3a6;
+  text-shadow: 0 0 10px rgba(255, 99, 82, 0.7), 0 0 2px rgba(255, 99, 82, 0.9);
+}
+
+.section-divider-lights {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.section-divider-strip {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: rgba(255, 99, 82, 0.4);
+}
+
+.section-divider-hex {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .section-divider-hex {
+    display: inline;
+  }
+}
+
+/* Scattered bolts across the bar surface, echoing the reference panel's greebling */
+.section-plaque-rivet-mt1 {
+  top: 10px;
+  left: 22%;
+}
+
+.section-plaque-rivet-mt2 {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-plaque-rivet-mt3 {
+  top: 10px;
+  right: 22%;
+}
+
+.section-plaque-rivet-mb1 {
+  bottom: 24px;
+  left: 16%;
+}
+
+.section-plaque-rivet-mb2 {
+  bottom: 24px;
+  right: 16%;
+}
+
+.section-plaque-rivet-mb3 {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-plaque-rivet-mt4 {
+  top: 10px;
+  left: 8%;
+}
+
+.section-plaque-rivet-mt5 {
+  top: 10px;
+  right: 8%;
+}
+
+.section-plaque-rivet-mb4 {
+  bottom: 24px;
+  left: 6%;
+}
+
+.section-plaque-rivet-mb5 {
+  bottom: 24px;
+  right: 6%;
+}
+
+.section-plaque-rivet-track-tl {
+  top: -3px;
+  left: 16px;
+}
+
+.section-plaque-rivet-track-tr {
+  top: -3px;
+  right: 16px;
+}
+
+.section-plaque-rivet-track-bl {
+  bottom: -3px;
+  left: 16px;
+}
+
+.section-plaque-rivet-track-br {
+  bottom: -3px;
+  right: 16px;
+}
+
+@media (max-width: 640px) {
+  .section-divider {
+    margin-top: -44px;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-divider-bar {
+    height: 124px;
+    gap: 10px;
+    padding: 0 14px;
+  }
+
+  .section-divider-flange {
+    width: 54px;
+    height: 84px;
+  }
+
+  .section-divider-vents {
+    width: 32px;
+    gap: 3px;
+  }
+
+  .section-divider-display-inner {
+    padding: 10px 16px;
+  }
+
+  .section-divider-text {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+  }
+
+  .section-divider-strip {
+    left: 14px;
+    right: 14px;
+  }
+
+  .section-plaque-rivet-mt1,
+  .section-plaque-rivet-mt3,
+  .section-plaque-rivet-mt4,
+  .section-plaque-rivet-mt5,
+  .section-plaque-rivet-mb1,
+  .section-plaque-rivet-mb2,
+  .section-plaque-rivet-mb4,
+  .section-plaque-rivet-mb5,
+  .section-plaque-rivet-track-tl,
+  .section-plaque-rivet-track-tr,
+  .section-plaque-rivet-track-bl,
+  .section-plaque-rivet-track-br {
+    display: none;
+  }
 }
