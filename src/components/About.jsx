@@ -9,11 +9,6 @@ import ufc from "../assets/Hobby_Images/ufc.png";
 const About = () => (
   <section id="about" className="about-section">
     <div className="container">
-      <div className="section-title">
-        <h2>
-          <span></span>About Me<span></span>
-        </h2>
-      </div>
       <div className="row align-self-center about-content-row">
         <div className="col-lg-8 content align-self-center">
           <div className="about-info-paragraph-minimal">

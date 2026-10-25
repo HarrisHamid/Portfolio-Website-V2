@@ -1,5 +1,42 @@
 @import "tailwindcss";
 
+/* Tokens for SciFiDoorPanel (Tailwind v4 theme; on v3 move these into theme.extend) */
+@theme {
+  --color-hull-950: #05080f;
+  --color-hull-900: #0b1a33;
+  --color-hull-800: #14284d;
+  --color-steel-500: #3b5f8f;
+  --color-steel-300: #6f8fb8;
+  --color-trim: #dfe9f7;
+  --color-signal-amber: #f5a524;
+  --color-signal-teal: #3ee0d0;
+
+  --font-terminal: "Share Tech Mono", "VT323", ui-monospace, monospace;
+  --font-pixel: "VT323", ui-monospace, monospace;
+
+  --animate-signal-pulse: signal-pulse 2.6s ease-in-out infinite;
+  --animate-screen-flicker: screen-flicker 7s linear infinite;
+  --animate-caret-blink: caret-blink 1s steps(1) infinite;
+
+  @keyframes signal-pulse {
+    0%, 100% { opacity: 1; filter: brightness(1.15); }
+    50% { opacity: 0.55; filter: brightness(0.8); }
+  }
+  @keyframes screen-flicker {
+    0%, 100% { opacity: 1; }
+    41% { opacity: 1; }
+    42% { opacity: 0.82; }
+    43% { opacity: 1; }
+    77% { opacity: 1; }
+    77.5% { opacity: 0.9; }
+    78% { opacity: 1; }
+  }
+  @keyframes caret-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+}
+
 html,
 body {
   margin: 0;

@@ -128,11 +128,6 @@ const ProjectsShowcase = () => {
 
   return (
     <section id="projects" className="projects-section">
-      <div className="section-title">
-        <h2>
-          <span></span>Projects<span></span>
-        </h2>
-      </div>{" "}
       <div className="projects-showcase">
         {projects.map((project, index) => (
           <ProjectCard
