@@ -1,6 +1,24 @@
 /* General styling */
 @import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap");
 
+/* Shared coral-to-teal card wash (Experience timeline cards, About card) */
+:root {
+  --card-wash:
+    radial-gradient(120% 70% at 75% 0%, rgba(255, 179, 166, 0.34), transparent 60%),
+    linear-gradient(
+      180deg,
+      rgba(255, 128, 110, 0.5) 0%,
+      rgba(214, 84, 68, 0.4) 40%,
+      rgba(40, 48, 50, 0.84) 72%,
+      rgba(10, 34, 34, 0.97) 100%
+    );
+  --card-wash-base: #0b1214;
+  --card-wash-border: rgba(255, 99, 82, 0.42);
+  --card-wash-border-hover: rgba(255, 179, 166, 0.75);
+  --card-wash-edge: inset 0 -3px 0 rgba(3, 171, 163, 0.55);
+  --card-wash-edge-hover: inset 0 -3px 0 rgba(47, 211, 200, 0.8);
+}
+
 /* Heading Styling */
 h1,
 h2,
@@ -446,10 +464,11 @@ body {
 
 /* Minimalist About Section Styles */
 .about-info-paragraph-minimal {
-  background: rgba(230, 224, 224, 0.03);
+  background: var(--card-wash), var(--card-wash-base);
   padding: 30px;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--card-wash-border);
+  box-shadow: var(--card-wash-edge), 0 24px 50px -28px rgba(0, 0, 0, 0.9);
   line-height: 1.6;
   transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out,
     box-shadow 0.3s ease-in-out;
@@ -459,15 +478,16 @@ body {
 
 .about-info-paragraph-minimal:hover {
   transform: translateY(-5px);
-  border-color: rgba(255, 99, 82, 0.95);
-  box-shadow: 0 8px 16px rgba(255, 99, 82, 0.1);
+  border-color: var(--card-wash-border-hover);
+  box-shadow: var(--card-wash-edge-hover),
+    0 30px 60px -26px rgba(255, 99, 82, 0.35);
 }
 
 /* Section Headings */
 .section-heading {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #ff6352;
+  color: #ffb3a6;
   margin-bottom: 20px;
   margin-top: 30px;
 }
@@ -491,7 +511,7 @@ body {
   width: 4px;
   height: auto;
   min-height: 105px;
-  background: linear-gradient(to bottom, #c43d30, #ff6352);
+  background: linear-gradient(to bottom, #ffb3a6, #2fd3c8);
   border-radius: 2px;
   flex-shrink: 0;
 }
@@ -510,14 +530,14 @@ body {
 
 .university-name {
   font-size: 1.1rem;
-  color: #ff6352;
+  color: #2fd3c8;
   margin: 0 0 5px 0;
   font-weight: 500;
 }
 
 .year-range {
   font-size: 0.95rem;
-  color: #999;
+  color: rgba(255, 255, 255, 0.72);
   margin: 0 0 15px 0;
 }
 
@@ -549,7 +569,7 @@ body {
   width: 4px;
   height: auto;
   min-height: 90px;
-  background: linear-gradient(to bottom, #c43d30, #ff6352);
+  background: linear-gradient(to bottom, #ffb3a6, #2fd3c8);
   border-radius: 2px;
   flex-shrink: 0;
 }
@@ -561,7 +581,7 @@ body {
 
 .org-item {
   font-size: 1rem;
-  color: #ccc;
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: 8px;
   line-height: 1.4;
 }
@@ -706,7 +726,6 @@ body {
   --tl-coral-soft: #ffb3a6;
   --tl-teal: #03aba3;
   --tl-teal-bright: #2fd3c8;
-  --tl-ink: #0b1214;
   overflow-x: clip;
 }
 
@@ -763,10 +782,9 @@ body {
   border-radius: 14px;
   overflow: hidden;
   isolation: isolate;
-  background: var(--tl-ink);
-  border: 1px solid rgba(255, 99, 82, 0.42);
-  box-shadow: inset 0 -3px 0 rgba(3, 171, 163, 0.55),
-    0 24px 50px -28px rgba(0, 0, 0, 0.9);
+  background: var(--card-wash-base);
+  border: 1px solid var(--card-wash-border);
+  box-shadow: var(--card-wash-edge), 0 24px 50px -28px rgba(0, 0, 0, 0.9);
   transition: border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
@@ -779,8 +797,8 @@ body {
 }
 
 .timeline-card:hover {
-  border-color: rgba(255, 179, 166, 0.75);
-  box-shadow: inset 0 -3px 0 rgba(47, 211, 200, 0.8),
+  border-color: var(--card-wash-border-hover);
+  box-shadow: var(--card-wash-edge-hover),
     0 30px 60px -26px rgba(255, 99, 82, 0.35);
 }
 
@@ -815,15 +833,7 @@ body {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background:
-    radial-gradient(120% 70% at 75% 0%, rgba(255, 179, 166, 0.34), transparent 60%),
-    linear-gradient(
-      180deg,
-      rgba(255, 128, 110, 0.5) 0%,
-      rgba(214, 84, 68, 0.4) 40%,
-      rgba(40, 48, 50, 0.84) 72%,
-      rgba(10, 34, 34, 0.97) 100%
-    );
+  background: var(--card-wash);
 }
 
 .timeline-card-body {
