@@ -1,6 +1,12 @@
 // Experience.jsx
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import "../App.css";
 import Icon from "./Icon";
 import blueprint from "../assets/Experience_Photos/blueprint.jpeg";
@@ -113,52 +119,104 @@ const experiences = [
   },
 ];
 
+// One card: slides in from its side, and its logo art drifts slower than the
+// card itself while it crosses the viewport (parallax, like a photo behind glass).
+const TimelineCard = ({ exp, index, reduceMotion }) => {
+  const ref = useRef(null);
+  const side = index % 2 === 0 ? "left" : "right";
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const artY = useTransform(scrollYProgress, [0, 1], ["-18%", "18%"]);
+  const artScale = useTransform(scrollYProgress, [0, 0.5, 1], [1.15, 1, 1.15]);
+
+  return (
+    <motion.article
+      ref={ref}
+      className={`timeline-card ${side}`}
+      style={{ "--row": index + 1 }}
+      initial={
+        reduceMotion
+          ? { opacity: 0 }
+          : { opacity: 0, y: 60, x: side === "left" ? -40 : 40 }
+      }
+      whileInView={{ opacity: 1, y: 0, x: 0 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <div className="timeline-card-art" aria-hidden="true">
+        <motion.img
+          src={exp.logo}
+          alt=""
+          style={reduceMotion ? undefined : { y: artY, scale: artScale }}
+        />
+      </div>
+      <div className="timeline-card-wash" aria-hidden="true" />
+
+      <div className="timeline-card-body">
+        <div className="timeline-card-top">
+          <img
+            src={exp.logo}
+            alt={`${exp.company} logo`}
+            className="company-logo"
+          />
+          <span className="timeline-card-location">
+            <Icon name="pin" /> {exp.location}
+          </span>
+        </div>
+
+        <p className="timeline-card-date">
+          <Icon name="calendar" /> {exp.years}
+        </p>
+        <h3>{exp.title.trim()}</h3>
+        <p className="company">{exp.company}</p>
+        <div className="tech-stack">
+          {exp.stack.map((tech) => (
+            <span key={tech} className="pill">
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.article>
+  );
+};
+
 const Experience = () => {
+  const containerRef = useRef(null);
+  const reduceMotion = useReducedMotion();
+
+  // 0 when the timeline's top reaches mid-screen, 1 when its bottom does, so
+  // the diamond sits at the middle of the viewport as you scroll through.
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"],
+  });
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 140,
+    damping: 30,
+    restDelta: 0.001,
+  });
+  const markerTop = useTransform(progress, (v) => `${v * 100}%`);
+
   return (
     <section id="experience" className="experience-section">
-      <div className="timeline-container">
-        <div className="timeline-line" />
-        {experiences.map((exp, index) => (
+      <div className="timeline-container" ref={containerRef}>
+        <div className="timeline-line" aria-hidden="true">
           <motion.div
-            key={index}
-            className={`timeline-card ${index % 2 === 0 ? "left" : "right"}`}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-          >
-            <img
-              src={exp.logo}
-              alt={`${exp.company} logo`}
-              className="company-logo"
-              style={{
-                width: "50px",
-                height: "50px",
-                borderRadius: "25%",
-                marginBottom: "10px",
-              }}
-            />
-            {/* Glowing dot */}
-            <div
-              className={`glow-dot ${
-                index % 2 === 0 ? "top-right" : "top-left"
-              }`}
-            />
-
-            <h3>{exp.title}</h3>
-            <p className="company">{exp.company}</p>
-            <p className="details">
-              <Icon name="calendar" /> {exp.years} <br />
-              <Icon name="pin" /> {exp.location} <br />
-            </p>
-            <div className="tech-stack">
-              {exp.stack.map((tech, i) => (
-                <span key={i} className="pill">
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </motion.div>
+            className="timeline-line-fill"
+            style={{ scaleY: progress }}
+          />
+          <motion.div className="timeline-marker" style={{ top: markerTop }} />
+        </div>
+        {experiences.map((exp, index) => (
+          <TimelineCard
+            key={`${exp.company}-${exp.years}`}
+            exp={exp}
+            index={index}
+            reduceMotion={reduceMotion}
+          />
         ))}
       </div>
     </section>

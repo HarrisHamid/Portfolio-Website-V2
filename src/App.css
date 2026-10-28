@@ -700,116 +700,240 @@ body {
   padding: 0;
 }
 
+.experience-section {
+  --tl-coral: #ff6352;
+  --tl-coral-deep: #c43d30;
+  --tl-coral-soft: #ffb3a6;
+  --tl-teal: #03aba3;
+  --tl-teal-bright: #2fd3c8;
+  --tl-ink: #0b1214;
+  overflow-x: clip;
+}
+
 .timeline-container {
   position: relative;
-  padding: 3rem 1rem;
   max-width: 1200px;
   margin: auto;
+  padding: 4rem 1.5rem 6rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 7rem;
+  row-gap: 3.5rem;
 }
 
-.timeline-title {
-  padding-top: 45px;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
-}
-
+/* Center rail: a faint track, a scroll-driven fill, and a diamond riding its head */
 .timeline-line {
   position: absolute;
-  top: 190px;
+  top: 4rem;
+  bottom: 6rem;
   left: 50%;
-  width: 2px;
-  height: 91%;
-  background: linear-gradient(to bottom, #ff6352, #03aba3);
+  width: 1px;
   transform: translateX(-50%);
+  background: rgba(255, 179, 166, 0.14);
   z-index: 1;
 }
 
+.timeline-line-fill {
+  position: absolute;
+  inset: 0;
+  transform-origin: top;
+  background: linear-gradient(to bottom, var(--tl-coral), var(--tl-teal));
+  box-shadow: 0 0 8px rgba(255, 99, 82, 0.45);
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  background: var(--tl-coral);
+  transform: rotate(45deg);
+  box-shadow: 0 0 0 4px rgba(255, 99, 82, 0.15), 0 0 18px rgba(255, 99, 82, 0.7);
+}
+
+/* Cards span two grid rows; the right column starts a row later, so each card
+   overlaps half of its neighbour on the other side. */
 .timeline-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  width: 90%;
-  max-width: 575px;
-  margin: 2rem 0;
+  grid-row: var(--row) / span 2;
   position: relative;
   z-index: 2;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  min-height: 330px;
+  display: flex;
+  border-radius: 14px;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--tl-ink);
+  border: 1px solid rgba(255, 99, 82, 0.42);
+  box-shadow: inset 0 -3px 0 rgba(3, 171, 163, 0.55),
+    0 24px 50px -28px rgba(0, 0, 0, 0.9);
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 .timeline-card.left {
-  margin-left: 0;
-  margin-right: auto;
-  text-align: left;
+  grid-column: 1;
 }
 
 .timeline-card.right {
-  margin-right: 0;
-  margin-left: auto;
+  grid-column: 2;
+}
+
+.timeline-card:hover {
+  border-color: rgba(255, 179, 166, 0.75);
+  box-shadow: inset 0 -3px 0 rgba(47, 211, 200, 0.8),
+    0 30px 60px -26px rgba(255, 99, 82, 0.35);
+}
+
+/* Logo as a large, washed-out "photo" behind the copy */
+.timeline-card-art {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 1.25rem 1.75rem 0 0;
+  -webkit-mask-image: linear-gradient(to bottom, #000 35%, transparent 78%);
+  mask-image: linear-gradient(to bottom, #000 35%, transparent 78%);
+}
+
+.timeline-card-art img {
+  width: 58%;
+  max-width: 260px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 18px;
+  filter: grayscale(1) contrast(1.15) blur(0.5px);
+  mix-blend-mode: luminosity;
+  opacity: 0.45;
+  /* feather the square edges so light-background logos don't read as a box */
+  -webkit-mask-image: radial-gradient(closest-side, #000 60%, transparent 100%);
+  mask-image: radial-gradient(closest-side, #000 60%, transparent 100%);
+}
+
+.timeline-card-wash {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(120% 70% at 75% 0%, rgba(255, 179, 166, 0.34), transparent 60%),
+    linear-gradient(
+      180deg,
+      rgba(255, 128, 110, 0.5) 0%,
+      rgba(214, 84, 68, 0.4) 40%,
+      rgba(40, 48, 50, 0.84) 72%,
+      rgba(10, 34, 34, 0.97) 100%
+    );
+}
+
+.timeline-card-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 1.5rem 1.75rem 1.75rem;
   text-align: left;
 }
 
-.company {
-  color: #2fd3c8;
-  font-weight: bold;
-  margin: 0.5rem 0;
+.timeline-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: auto;
+  padding-bottom: 2.5rem;
 }
 
-.details {
-  font-size: 0.9rem;
-  line-height: 1.5;
+.timeline-card .company-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 179, 166, 0.4);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.timeline-card-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: #fff;
+  background: rgba(11, 18, 20, 0.45);
+  border: 1px solid rgba(255, 179, 166, 0.25);
+  backdrop-filter: blur(6px);
+  white-space: nowrap;
+}
+
+.timeline-card-date {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tl-coral-soft);
+}
+
+.timeline-card h3 {
+  margin: 0;
+  font-family: "Anta", sans-serif;
+  font-size: clamp(1.4rem, 2.3vw, 1.95rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #fff;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+}
+
+.company {
+  color: var(--tl-teal-bright);
+  font-weight: bold;
+  margin: 0.4rem 0 0;
 }
 
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 1.1rem;
 }
 
 .pill {
-  background: #0a2826;
-  padding: 0.4rem 0.8rem;
+  background: rgba(10, 40, 38, 0.75);
+  padding: 0.35rem 0.75rem;
   border-radius: 999px;
-  font-size: 0.8rem;
-  color: #2fd3c8;
-  border: 1px solid #03aba3;
-}
-
-.glow-dot {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #ff6352;
-  box-shadow: 0 0 10px #ff6352, 0 0 20px #ff6352, 0 0 30px #ff6352;
-  z-index: 3;
-}
-
-.top-right {
-  top: -1px;
-  right: -17px;
-}
-
-.top-left {
-  top: -1px;
-  left: -17px;
+  font-size: 0.75rem;
+  color: var(--tl-teal-bright);
+  border: 1px solid rgba(3, 171, 163, 0.7);
 }
 
 @media (max-width: 768px) {
-  .timeline-card {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    text-align: left;
-    width: 100%;
+  .timeline-container {
+    grid-template-columns: 1fr;
+    row-gap: 1.75rem;
+    padding: 3rem 1rem 4rem 2.75rem;
   }
 
-  .glow-dot.top-left,
-  .glow-dot.top-right {
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
+  .timeline-line {
+    top: 3rem;
+    bottom: 4rem;
+    left: 1.25rem;
+  }
+
+  .timeline-card,
+  .timeline-card.left,
+  .timeline-card.right {
+    grid-column: 1;
+    grid-row: auto;
+    min-height: 280px;
+  }
+
+  .timeline-card-body {
+    padding: 1.25rem;
   }
 }
 
