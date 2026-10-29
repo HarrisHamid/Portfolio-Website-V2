@@ -26,7 +26,7 @@ const experiences = [
     years: "Jun 26 - Present",
     location: "Bedford, MA",
     stack: ["Python", "C++", "TypeScript", "NS-3"],
-    logo: blueprint,
+    logo: mitre,
   },
   {
     title: "Platform Software Engineer Intern",
@@ -39,7 +39,7 @@ const experiences = [
   {
     title: "Vice President of Recruitment",
     company: "Blueprint",
-    years: "Apr 2025 - Present",
+    years: "Apr 2025 - Apr 2026",
     location: "Hoboken, NJ",
     stack: ["Leadership", "Recruitment", "Communication"],
     logo: blueprint,
@@ -55,7 +55,7 @@ const experiences = [
   {
     title: "Teaching Assistant/Course Assistant",
     company: "Stevens Institute of Technology",
-    years: "Sep 2025 - Present",
+    years: "Sep 2025 - May 2026",
     location: "Hoboken, NJ",
     stack: ["C++", "Teaching"],
     logo: stevens,
@@ -96,7 +96,7 @@ const experiences = [
   {
     title: "Brotherhood Chair",
     company: "Muslim Student Association",
-    years: "April 2024 - Present",
+    years: "April 2024 - Apr 2026",
     location: "Hoboken, NJ",
     stack: ["Leadership", "Community Building", "Event Planning"],
     logo: msa,
