@@ -23,7 +23,7 @@ const experiences = [
   {
     title: "Software Engineer",
     company: "MITRE",
-    years: "Jun 26 - Present",
+    years: "Jun 2026 - Present",
     location: "Bedford, MA",
     stack: ["Python", "C++", "TypeScript", "NS-3"],
     logo: mitre,
@@ -47,7 +47,7 @@ const experiences = [
   {
     title: "Campus Partner",
     company: "Perplexity",
-    years: "Sept 2025 - Dec 2025",
+    years: "Sep 2025 - Dec 2025",
     location: "Hoboken, NJ",
     stack: ["Marketing", "Sales"],
     logo: perplex,
@@ -88,7 +88,7 @@ const experiences = [
   {
     title: "Machine Learning Researcher",
     company: "ProOF Lab",
-    years: "May 2024 - August 2024",
+    years: "May 2024 - Aug 2024",
     stack: ["Python", "Google Colab", "Meshlab"],
     location: "Remote",
     logo: proof,
@@ -96,7 +96,7 @@ const experiences = [
   {
     title: "Brotherhood Chair",
     company: "Muslim Student Association",
-    years: "April 2024 - Apr 2026",
+    years: "Apr 2024 - Apr 2026",
     location: "Hoboken, NJ",
     stack: ["Leadership", "Community Building", "Event Planning"],
     logo: msa,
